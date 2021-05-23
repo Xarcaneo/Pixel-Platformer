@@ -48,7 +48,7 @@ __meta__ = {
 }
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 3 )]
-next_scene_patch = "res://src/Levels/LevelTemplate.tscn"
+next_scene_patch = "res://src/Levels/Level1-1.tscn"
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 1 )]
 margin_top = 90.0
