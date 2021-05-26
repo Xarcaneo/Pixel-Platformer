@@ -35,7 +35,9 @@ func bounce(
 	if is_on_floor() && can_bounce:
 		out.y = speed.y * -1
 	return out
-
+	
+func teleport():
+	animation_player.play("teleport")
 
 func _on_DeadlyDetector_area_entered(area: Area2D) -> void:
 	animation_player.play("die_animation")

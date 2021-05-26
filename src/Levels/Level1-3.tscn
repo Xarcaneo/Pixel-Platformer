@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/tileset/Tileset.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -776,8 +775,6 @@ layer = 100
 
 [node name="UserInterface" parent="UserInterface" instance=ExtResource( 7 )]
 
-[node name="UserInterface2" parent="UserInterface" instance=ExtResource( 7 )]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 32 )
 cell_size = Vector2( 32, 32 )
@@ -814,28 +811,6 @@ position = Vector2( 448, 800 )
 
 [node name="Lava4" parent="Obstacles" instance=ExtResource( 3 )]
 position = Vector2( 480, 800 )
-
-[node name="Spike" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 912, 768 )
-
-[node name="Spike3" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 544, 736 )
-rotation = 3.14159
-
-[node name="Spike2" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 976, 768 )
-
-[node name="Spike4" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 1024, 768 )
-
-[node name="Spike5" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 1072, 768 )
-
-[node name="Spike6" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 1104, 768 )
-
-[node name="Spike7" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 1152, 768 )
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -888,8 +863,8 @@ position = Vector2( 736, 672 )
 position = Vector2( 864, 736 )
 
 [node name="Portal" parent="." instance=ExtResource( 6 )]
-position = Vector2( 64, 704 )
-current_level = 1
+position = Vector2( 1024, 704 )
+current_level = 3
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 700.968 )

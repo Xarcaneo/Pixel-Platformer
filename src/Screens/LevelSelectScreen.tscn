@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=4]
+
+[node name="LevelSelectScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+margin_right = 1280.0
+margin_bottom = 800.0
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer"]
+margin_right = 2560.0
+margin_bottom = 800.0
+custom_constants/separation = 0
+
+[node name="LevelBackdrop1" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop2" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1280.0
+margin_right = 2560.0
+margin_bottom = 800.0

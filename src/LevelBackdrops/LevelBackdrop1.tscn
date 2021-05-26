@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UserInterface/LevelSelectButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/level backdrops/Level Select Map 1.png" type="Texture" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/level_select_button2.png-9152e7b3ff59b4e4c426f2c3f1eebc05.stex"
+
+[node name="LevelBackdrop1" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectButton" parent="." instance=ExtResource( 1 )]
+margin_left = 53.8782
+margin_top = 381.637
+margin_right = 117.878
+margin_bottom = 445.637
+level = 1
+next_level_patch = "res://src/Levels/Level1-1.tscn"
+
+[node name="LevelSelectButton2" parent="." instance=ExtResource( 1 )]
+margin_left = 341.228
+margin_top = 386.127
+margin_right = 405.228
+margin_bottom = 450.127
+texture_normal = SubResource( 1 )
+level = 2
+next_level_patch = "res://src/Levels/Level1-2.tscn"
+
+[node name="LevelSelectButton3" parent="." instance=ExtResource( 1 )]
+margin_left = 594.905
+margin_top = 215.513
+margin_right = 658.905
+margin_bottom = 279.513
+texture_normal = SubResource( 1 )
+level = 3
+next_level_patch = "res://src/Levels/Level1-3.tscn"
+
+[node name="LevelSelectButton4" parent="." instance=ExtResource( 1 )]
+margin_left = 918.174
+margin_top = 71.8376
+margin_right = 982.174
+margin_bottom = 135.838
+texture_normal = SubResource( 1 )
+level = 4
+
+[node name="LevelSelectButton5" parent="." instance=ExtResource( 1 )]
+margin_left = 1039.4
+margin_top = 496.128
+margin_right = 1103.4
+margin_bottom = 560.128
+texture_normal = SubResource( 1 )
+level = 5
