@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Spike.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Hint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -771,6 +773,19 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [node name="LevelTemplate" type="Node2D"]
 
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Background" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 800.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100
 
@@ -887,11 +902,21 @@ position = Vector2( 736, 672 )
 [node name="Coin17" parent="Coins" instance=ExtResource( 1 )]
 position = Vector2( 864, 736 )
 
+[node name="Hints" type="Node2D" parent="."]
+
+[node name="Hint" parent="Hints" instance=ExtResource( 9 )]
+position = Vector2( 128, 707.899 )
+text = "You can move by touch left or right side of screenq"
+
+[node name="Hint2" parent="Hints" instance=ExtResource( 9 )]
+position = Vector2( 576, 704 )
+text = "Coolect all coins to get better score"
+
 [node name="Portal" parent="." instance=ExtResource( 6 )]
-position = Vector2( 64, 704 )
+position = Vector2( 1216, 704 )
 current_level = 1
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 700.968 )
+position = Vector2( 64, 692 )
 collision_mask = 2
 speed = Vector2( 300, 1000 )

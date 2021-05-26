@@ -1,13 +1,17 @@
 tool
 extends Area2D
 
+var is_teleporting = false
+
 onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 export var current_level: int
 export var next_scene: PackedScene
 
 func _on_body_entered(body: Node) -> void:
-	body.teleport()
+	if !is_teleporting:
+		body.teleport()
+		is_teleporting = true
 	teleport()
 
 func _get_configuration_warning() -> String:

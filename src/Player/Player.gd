@@ -3,13 +3,34 @@ extends Actor
 onready var animation_player: = $AnimationPlayer
 export var can_bounce = true
 export var can_move = true
+export var speach_bubble : PackedScene
+
+onready var sprite: Sprite = $Sprite
 
 func _physics_process(delta: float) -> void:
 	var direction: = _get_direction()
+	check_speach_bubble()
 	_velocity = bounce(_velocity, speed)
 	_velocity = calculate_move_velocity(_velocity, direction, speed)
 	if can_move:
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+
+		
+func  _create_speach_bubble(text: String) -> void:
+	var new_bubble = speach_bubble.instance()
+	new_bubble.bubble_text = text
+	new_bubble.global_position = Vector2(sprite.position.x, sprite.position.y - 50)
+	add_child(new_bubble)
+	Input.action_release("ui_touch")
+	
+func check_speach_bubble() -> void:
+	if has_node("Speach Bubble"):
+		can_move = false
+		can_bounce = false
+	else:
+		if animation_player.current_animation != "die_animation" and animation_player.current_animation != "teleport":
+			can_move = true
+			can_bounce = true
 
 func _get_direction() -> Vector2:
 	return Vector2(
@@ -38,7 +59,7 @@ func bounce(
 	
 func teleport():
 	animation_player.play("teleport")
-
+	
 func _on_DeadlyDetector_area_entered(area: Area2D) -> void:
 	animation_player.play("die_animation")
 	yield(animation_player, "animation_finished")

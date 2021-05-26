@@ -3,7 +3,7 @@ extends TextureButton
 
 #Level Stuff
 export (int) var level
-export(String, FILE) var next_level_patch: = ""
+export(String, FILE) var next_level_patch
 export (bool) var enabled
 export (bool) var score_goal_met
 
