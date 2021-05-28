@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=4]
 [ext_resource path="res://assets/UI/Icons_39.png" type="Texture" id=5]
+[ext_resource path="res://assets/objects/Coin.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=7]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=8]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -16,8 +19,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 48.0
+custom_fonts/font = ExtResource( 7 )
+text = "99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2( 1172.5, 40.5947 )
+position = Vector2( 1180, 32 )
 scale = Vector2( 3, 3 )
 normal = ExtResource( 5 )
 action = "pause"
@@ -31,19 +70,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PauseOverlay"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 8 )]
 margin_left = -150.0
-margin_top = -326.041
+margin_top = 192.0
 margin_right = 150.0
-margin_bottom = -276.041
+margin_bottom = 242.0
 text = "Paused"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
 anchor_left = 0.5

@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/Scripts/AudioShared.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/theme-1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=4]
+[ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=5]
+
+[node name="CreditsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -452.457, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+music_clip = ExtResource( 2 )
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.41425
+margin_top = -1.4142
+margin_right = -1.41425
+margin_bottom = -1.41418
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -162.0
+margin_top = -313.0
+margin_right = 163.0
+margin_bottom = -263.0
+text = "Credits"
+
+[node name="Credits" parent="." instance=ExtResource( 3 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -163.0
+margin_right = 287.5
+margin_bottom = -113.0
+text = "Patryk Dudka"
+
+[node name="MainMenuTouchButton" parent="." instance=ExtResource( 5 )]

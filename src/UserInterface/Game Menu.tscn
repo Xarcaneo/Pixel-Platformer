@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=1]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=3]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "slide_in"
+
+[node name="Game Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectPanel" type="CanvasLayer" parent="MarginContainer"]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/LevelSelectPanel"]
+margin_right = 1280.0
+margin_bottom = 800.0
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/LevelSelectPanel/ScrollContainer"]
+margin_right = 2560.0
+margin_bottom = 800.0
+custom_constants/separation = 0
+
+[node name="LevelBackdrop1" parent="MarginContainer/LevelSelectPanel/ScrollContainer/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop2" parent="MarginContainer/LevelSelectPanel/ScrollContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1280.0
+margin_right = 2560.0
+margin_bottom = 800.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuPanel" type="CanvasLayer" parent="MarginContainer2"]
+
+[node name="background" type="TextureRect" parent="MarginContainer2/MainMenuPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.41425
+margin_top = -1.4142
+margin_right = -1.41431
+margin_bottom = -1.41418
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="MarginContainer2/MainMenuPanel" instance=ExtResource( 4 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -387.5
+margin_top = -312.675
+margin_right = 387.5
+margin_bottom = -262.675
+theme = ExtResource( 3 )
+text = "Pixel Platformer"
+
+[node name="Menu" type="VBoxContainer" parent="MarginContainer2/MainMenuPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.5
+margin_top = -88.5
+margin_right = 130.5
+margin_bottom = 88.5
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="MarginContainer2/MainMenuPanel/Menu" instance=ExtResource( 5 )]
+next_scene_patch = "res://src/Screens/LevelSelectScreen.tscn"
+
+[node name="QuitButton" parent="MarginContainer2/MainMenuPanel/Menu" instance=ExtResource( 7 )]
+margin_top = 90.0
+margin_bottom = 177.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/slide_in = SubResource( 1 )

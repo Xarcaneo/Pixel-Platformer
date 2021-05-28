@@ -14,6 +14,7 @@ export (Texture) var goal_met
 export (Texture) var goal_not_met
 
 onready var level_label = $Label
+onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	if GameDataManager.level_info.has(level):
@@ -36,6 +37,10 @@ func setup():
 
 func _pressed() -> void:
 	if enabled:
+		GameDataManager.current_h_scroll = rect_position.x
+		GameDataManager.save_screen_selector_data()
+		anim_player.play("fade_in")
+		yield(anim_player,"animation_finished")
 		get_tree().change_scene(next_level_patch)
 
 func _get_configuration_warning():

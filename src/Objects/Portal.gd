@@ -9,10 +9,11 @@ export var current_level: int
 export var next_scene: PackedScene
 
 func _on_body_entered(body: Node) -> void:
-	if !is_teleporting:
-		body.teleport()
-		is_teleporting = true
-	teleport()
+	if PlayerData.coins == 0:
+		if !is_teleporting:
+			body.teleport()
+			is_teleporting = true
+		teleport()
 
 func _get_configuration_warning() -> String:
 	return "The next scene property can't be empty" if not next_scene else ""
