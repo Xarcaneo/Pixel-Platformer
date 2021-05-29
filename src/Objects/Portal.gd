@@ -21,10 +21,25 @@ func _get_configuration_warning() -> String:
 func teleport() ->void:
 	anim_player.play("fade_in")
 	yield(anim_player,"animation_finished")
-	GameDataManager.level_info[current_level + 1] = {
-		"unlocked": true,
-		"high_score": 0,
-		"stars_unlocked": 0
-		}
-	GameDataManager.save_data()
+	set_level_data()
+# warning-ignore:return_value_discarded
 	get_tree().change_scene_to(next_scene)
+	
+func set_level_data() -> void:
+	if PlayerData.extra:
+		GameDataManager.level_info[current_level] = {
+		"unlocked": true,
+		"extra_unlocked": true
+		}
+	
+	var extra_unlocked = false
+	if GameDataManager.level_info.size()  >= current_level + 1:
+		if GameDataManager.level_info[current_level + 1]["extra_unlocked"]:
+			extra_unlocked = true
+		
+	GameDataManager.level_info[current_level + 1] = {
+	"unlocked": true,
+	"extra_unlocked": extra_unlocked
+	}
+	GameDataManager.save_data()
+	

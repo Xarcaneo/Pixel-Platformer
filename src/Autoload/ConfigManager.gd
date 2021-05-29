@@ -1,7 +1,6 @@
 extends Node
 
 onready var path = "user://config.ini"
-var sound_on = true
 var music_on = true
 
 func _ready():
@@ -9,7 +8,6 @@ func _ready():
 
 func save_config():
 	var config = ConfigFile.new()
-	config.set_value("audio", "sound", sound_on)
 	config.set_value("audio", "music", music_on)
 	
 	var err = config.save(path)
@@ -26,6 +24,5 @@ func load_config():
 	if err != OK:
 		return default_options
 	var options = {}
-	sound_on = config.get_value("audio", "sound", default_options.sound)
 	music_on = config.get_value("audio", "music", default_options.music)
 	return options

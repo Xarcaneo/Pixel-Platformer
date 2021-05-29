@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=8]
 [ext_resource path="res://assets/music/theme-3.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -788,6 +789,9 @@ format = 1
 tile_data = PoolIntArray( 262183, 1, 0, 327719, 1, 0, 393255, 1, 0, 458791, 1, 0, 524288, 1, 0, 524327, 1, 0, 589824, 1, 0, 589863, 1, 0, 655360, 1, 0, 655399, 1, 0, 720896, 1, 0, 720935, 1, 0, 786432, 1, 0, 786471, 1, 0, 851968, 1, 0, 852007, 1, 0, 917504, 1, 0, 917543, 1, 0, 983040, 1, 0, 983079, 1, 0, 1048576, 1, 0, 1048615, 1, 0, 1114112, 1, 0, 1114151, 1, 0, 1179648, 1, 0, 1179687, 1, 0, 1245184, 1, 0, 1245223, 1, 0, 1310720, 1, 0, 1310728, 1, 0, 1310732, 1, 0, 1310736, 1, 0, 1310759, 1, 0, 1376256, 1, 0, 1376295, 1, 0, 1441792, 1, 0, 1441831, 1, 0, 1507328, 1, 0, 1507367, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572880, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572884, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1572887, 1, 0, 1572888, 1, 0, 1572889, 1, 0, 1572890, 1, 0, 1572891, 1, 0, 1572892, 1, 0, 1572893, 1, 0, 1572894, 1, 0, 1572895, 1, 0, 1572896, 1, 0, 1572897, 1, 0, 1572898, 1, 0, 1572899, 1, 0, 1572900, 1, 0, 1572901, 1, 0, 1572902, 1, 0, 1572903, 1, 0, 1638407, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638410, 1, 0, 1638411, 1, 0, 1638412, 1, 0, 1638413, 1, 0, 1638414, 1, 0, 1638415, 1, 0, 1638416, 1, 0 )
 
 [node name="TouchScreenButtons" parent="." instance=ExtResource( 2 )]
+
+[node name="Extra" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1088, 704 )
 
 [node name="Obstacles" type="Node2D" parent="."]
 position = Vector2( 0, -32 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://assets/objects/Coin.png" type="Texture" id=6]
 [ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=7]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/UI/Icons_38.png" type="Texture" id=9]
+[ext_resource path="res://assets/objects/extra_full.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/Icons_37.png" type="Texture" id=11]
+[ext_resource path="res://src/UserInterface/SoundButton.tscn" type="PackedScene" id=12]
 
 [node name="UserInterface" type="Control"]
 pause_mode = 2
@@ -19,7 +23,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CoinsPanel" type="ColorRect" parent="."]
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 128.0
@@ -29,11 +33,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+[node name="CheckMark_Sprite" type="Sprite" parent="CoinsPanel"]
+visible = false
+position = Vector2( 64, 32 )
+texture = ExtResource( 9 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CoinsPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="CoinsPanel"]
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 6 )
@@ -43,7 +52,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="CoinsPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 48.0
@@ -51,6 +60,39 @@ custom_fonts/font = ExtResource( 7 )
 text = "99"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExtraPanel" type="ColorRect" parent="."]
+margin_left = 160.0
+margin_top = 32.0
+margin_right = 256.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckMark_Sprite" type="Sprite" parent="ExtraPanel"]
+visible = false
+position = Vector2( 64, 32 )
+texture = ExtResource( 9 )
+
+[node name="CrossSign_Sprite" type="Sprite" parent="ExtraPanel"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 11 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExtraPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="ExtraPanel"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,6 +111,9 @@ color = Color( 0, 0, 0, 0.235294 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SoundButton" parent="PauseOverlay" instance=ExtResource( 12 )]
+position = Vector2( 1180, 128 )
 
 [node name="Title" parent="PauseOverlay" instance=ExtResource( 8 )]
 margin_left = -150.0

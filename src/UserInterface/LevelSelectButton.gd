@@ -15,14 +15,11 @@ export (Texture) var goal_not_met
 
 onready var level_label = $Label
 onready var anim_player: AnimationPlayer = $AnimationPlayer
-
+onready var extra_sprite: Sprite = $Extra_sprite
 func _ready():
 	if GameDataManager.level_info.has(level):
 		enabled = GameDataManager.level_info[level]["unlocked"]
-		if GameDataManager.level_info[level]["stars_unlocked"] == 1:
-			score_goal_met = true
-		else:
-			score_goal_met = false
+		score_goal_met =  GameDataManager.level_info[level]["extra_unlocked"]
 	else:
 		enabled = false
 	setup()
@@ -33,7 +30,11 @@ func setup():
 		texture_normal = open_texture
 	else:
 		texture_normal = blocked_texture
-
+		
+	if score_goal_met:
+		extra_sprite.texture = goal_met
+	else:
+		extra_sprite.texture = goal_not_met
 
 func _pressed() -> void:
 	if enabled:

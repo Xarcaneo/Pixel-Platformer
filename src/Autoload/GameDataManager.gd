@@ -8,8 +8,7 @@ var level_info = {}
 var default_level_info = {
 	1:{
 		"unlocked": true,
-		"high_score": 0,
-		"stars_unlocked": 0
+		"extra_unlocked": false
 		}
 	}
 onready var path = "user://save.dat"

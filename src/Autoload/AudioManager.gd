@@ -1,11 +1,18 @@
 extends Node
 
 var dic : Dictionary = {}
+var master_sound = AudioServer.get_bus_index("Master")
 
 onready var music_player: AudioStreamPlayer = $Music/Music_player
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var sfx: Node = $Sfx
 
+func mute_sounds() -> void:
+	if ConfigManager.music_on:
+		AudioServer.set_bus_mute(master_sound, false)
+	else:
+		AudioServer.set_bus_mute(master_sound, true)
+		
 func play_sfx(audio_clip : AudioStream, priority : int = 0):
 	for child in sfx.get_children():
 		if child.playing == false:
@@ -56,9 +63,13 @@ func play_music(music_clip : AudioStream):
 	if music_player.stream == music_clip:
 		pass
 	else:
-		animation_player.play("fade_out")
-		yield(animation_player,"animation_finished")
-		music_player.stream = music_clip
-		music_player.play()
-		animation_player.play("fade_in")
+		if music_player.stream != null:
+			animation_player.play("fade_out")
+			yield(animation_player,"animation_finished")
+			music_player.stream = music_clip
+			music_player.play()
+			animation_player.play("fade_in")
+		else:
+			music_player.stream = music_clip
+			music_player.play()
 	
