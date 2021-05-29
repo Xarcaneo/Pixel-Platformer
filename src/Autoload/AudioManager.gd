@@ -7,6 +7,9 @@ onready var music_player: AudioStreamPlayer = $Music/Music_player
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var sfx: Node = $Sfx
 
+func _ready() -> void:
+	mute_sounds()
+
 func mute_sounds() -> void:
 	if ConfigManager.music_on:
 		AudioServer.set_bus_mute(master_sound, false)
