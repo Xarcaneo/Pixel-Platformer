@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=2]
@@ -9,127 +9,274 @@
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=9]
+[ext_resource path="res://src/Objects/Hint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/music/theme-2.ogg" type="AudioStream" id=11]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 9 )
+music_clip = ExtResource( 11 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="UserInterface" parent="UserInterface" instance=ExtResource( 4 )]
 
-[node name="TileMap" parent="." instance=ExtResource( 5 )]
-tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 38, 1, 0, 39, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65563, 1, 0, 65575, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131095, 1, 0, 131097, 1, 0, 131099, 1, 0, 131111, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196629, 1, 0, 196631, 1, 0, 196633, 1, 0, 196635, 1, 0, 196647, 1, 0, 262144, 1, 0, 262165, 1, 0, 262167, 1, 0, 262169, 1, 0, 262171, 1, 0, 262183, 1, 0, 327680, 1, 0, 327701, 1, 0, 327703, 1, 0, 327705, 1, 0, 327707, 1, 0, 327719, 1, 0, 393216, 1, 0, 393228, 1, 0, 393237, 1, 0, 393239, 1, 0, 393241, 1, 0, 393243, 1, 0, 393255, 1, 0, 458752, 1, 0, 458773, 1, 0, 458775, 1, 0, 458777, 1, 0, 458779, 1, 0, 458791, 1, 0, 524288, 1, 0, 524309, 1, 0, 524311, 1, 0, 524313, 1, 0, 524315, 1, 0, 524326, 1, 0, 524327, 1, 0, 589824, 1, 0, 589845, 1, 0, 589847, 1, 0, 589849, 1, 0, 589851, 1, 0, 589863, 1, 0, 655360, 1, 0, 655372, 1, 0, 655381, 1, 0, 655383, 1, 0, 655385, 1, 0, 655387, 1, 0, 655399, 1, 0, 720896, 1, 0, 720917, 1, 0, 720919, 1, 0, 720921, 1, 0, 720923, 1, 0, 720935, 1, 0, 786432, 1, 0, 786470, 1, 0, 786471, 1, 0, 851968, 1, 0, 851972, 1, 0, 851977, 1, 0, 851978, 1, 0, 852007, 1, 0, 917504, 1, 0, 917543, 1, 0, 983040, 1, 0, 983079, 1, 0, 1048576, 1, 0, 1048614, 1, 0, 1048615, 1, 0, 1114112, 1, 0, 1114116, 1, 0, 1114151, 1, 0, 1179648, 1, 0, 1179687, 1, 0, 1245184, 1, 0, 1245223, 1, 0, 1310720, 1, 0, 1310758, 1, 0, 1310759, 1, 0, 1376256, 1, 0, 1376260, 1, 0, 1376295, 1, 0, 1441792, 1, 0, 1441831, 1, 0, 1507328, 1, 0, 1507367, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572877, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572880, 1, 0, 1572881, 1, 0, 1572884, 1, 0, 1572885, 1, 0, 1572887, 1, 0, 1572889, 1, 0, 1572890, 1, 0, 1572893, 1, 0, 1572894, 1, 0, 1572896, 1, 0, 1572897, 1, 0, 1572898, 1, 0, 1572899, 1, 0, 1572900, 1, 0, 1572901, 1, 0, 1572902, 1, 0, 1572903, 1, 0 )
-
-[node name="Extra" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1216, 224 )
-
 [node name="Portal" parent="." instance=ExtResource( 2 )]
-position = Vector2( 832, 320 )
+position = Vector2( 928, 640 )
 current_level = 6
+
+[node name="Hints" type="Node2D" parent="."]
+
+[node name="Hint" parent="Hints" instance=ExtResource( 10 )]
+position = Vector2( 770.5, 416 )
+text = "Good job, let's move out of here"
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Lava" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 992, 768 )
-
-[node name="Lava2" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 608, 768 )
-
-[node name="Lava7" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 576, 768 )
-
-[node name="Lava3" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 896, 768 )
-
 [node name="Lava4" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 704, 768 )
+position = Vector2( 288, 768 )
 
 [node name="Lava5" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 768, 768 )
+position = Vector2( 320, 768 )
 
 [node name="Lava6" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 352, 768 )
+
+[node name="Lava7" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 384, 768 )
+
+[node name="Lava8" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 416, 768 )
+
+[node name="Lava9" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 448, 768 )
+
+[node name="Lava10" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 480, 768 )
+
+[node name="Lava11" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 512, 768 )
+
+[node name="Lava12" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 544, 768 )
+
+[node name="Lava13" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 576, 768 )
+
+[node name="Lava14" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 608, 768 )
+
+[node name="Lava15" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 768 )
+
+[node name="Lava16" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 768 )
+
+[node name="Lava17" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 768 )
+
+[node name="Lava18" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 736, 768 )
+
+[node name="Lava19" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 768, 768 )
+
+[node name="Lava20" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 800, 768 )
+
+[node name="Lava21" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 832, 768 )
+
+[node name="Lava22" parent="Obstacles" instance=ExtResource( 8 )]
 position = Vector2( 864, 768 )
+
+[node name="Lava24" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 576, 768 )
+
+[node name="Lava25" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 736 )
+
+[node name="Lava26" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 736 )
+
+[node name="Lava27" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 736 )
+
+[node name="Lava28" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 768 )
+
+[node name="Lava29" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 704 )
+
+[node name="Lava44" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 672 )
+
+[node name="Lava45" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 672 )
+
+[node name="Lava46" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 672 )
+
+[node name="Lava47" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 640 )
+
+[node name="Lava48" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 640 )
+
+[node name="Lava49" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 640 )
+
+[node name="Lava50" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 608 )
+
+[node name="Lava51" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 608 )
+
+[node name="Lava52" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 608 )
+
+[node name="Lava53" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 576 )
+
+[node name="Lava54" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 576 )
+
+[node name="Lava55" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 576 )
+
+[node name="Lava56" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 544 )
+
+[node name="Lava57" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 544 )
+
+[node name="Lava58" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 544 )
+
+[node name="Lava59" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 512 )
+
+[node name="Lava60" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 512 )
+
+[node name="Lava61" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 512 )
+
+[node name="Lava62" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 480 )
+
+[node name="Lava63" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 480 )
+
+[node name="Lava64" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 480 )
+
+[node name="Lava65" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 640, 448 )
+
+[node name="Lava68" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 256, 480 )
+
+[node name="Lava69" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 256, 512 )
+
+[node name="Lava70" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 256, 544 )
+
+[node name="Lava71" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 256, 576 )
+
+[node name="Lava72" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 256, 608 )
+
+[node name="Lava66" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 448 )
+
+[node name="Lava73" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 384 )
+
+[node name="Lava74" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 352 )
+
+[node name="Lava75" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 320 )
+
+[node name="Lava76" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 288 )
+
+[node name="Lava67" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 448 )
+
+[node name="Lava30" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 672, 704 )
+
+[node name="Lava31" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 704, 704 )
+
+[node name="Lava32" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 832, 768 )
+
+[node name="Lava33" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 864, 768 )
+
+[node name="Lava34" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 896, 768 )
+
+[node name="Lava35" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 928, 768 )
+
+[node name="Lava36" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 960, 768 )
+
+[node name="Lava37" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 992, 768 )
+
+[node name="Lava38" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1024, 768 )
+
+[node name="Lava39" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1056, 768 )
+
+[node name="Lava40" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1088, 768 )
+
+[node name="Lava41" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1120, 768 )
+
+[node name="Lava42" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1152, 768 )
+
+[node name="Lava43" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1184, 768 )
 
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 128, 640 )
+position = Vector2( 192, 576 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 128, 512 )
+position = Vector2( 288, 448 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 128, 382.878 )
+position = Vector2( 320, 448 )
 
 [node name="Coin4" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 384, 288 )
+position = Vector2( 672, 224 )
 
 [node name="Coin5" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 384, 160 )
+position = Vector2( 608, 384 )
 
 [node name="Coin6" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 64 )
+position = Vector2( 608, 384 )
 
-[node name="Coin7" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 96 )
+[node name="Extra" parent="." instance=ExtResource( 1 )]
+position = Vector2( 576, 704 )
 
-[node name="Coin8" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 128 )
-
-[node name="Coin9" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 160 )
-
-[node name="Coin10" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 192 )
-
-[node name="Coin11" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 224 )
-
-[node name="Coin12" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 256 )
-
-[node name="Coin13" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 288 )
-
-[node name="Coin14" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 320 )
-
-[node name="Coin15" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 704, 352 )
-
-[node name="Coin16" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 64 )
-
-[node name="Coin17" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 96 )
-
-[node name="Coin18" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 128 )
-
-[node name="Coin19" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 160 )
-
-[node name="Coin20" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 192 )
-
-[node name="Coin21" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 224 )
-
-[node name="Coin22" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 256 )
-
-[node name="Coin23" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 288 )
-
-[node name="Coin24" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 320 )
-
-[node name="Coin25" parent="Coins" instance=ExtResource( 6 )]
-position = Vector2( 770.5, 352 )
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 38, 1, 0, 39, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 65566, 1, 0, 65567, 1, 0, 65568, 1, 0, 65569, 1, 0, 65570, 1, 0, 65571, 1, 0, 65572, 1, 0, 65573, 1, 0, 65574, 1, 0, 65575, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0, 131103, 1, 0, 131104, 1, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 196608, 1, 0, 196609, 1, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 1, 0, 196633, 1, 0, 196634, 1, 0, 196635, 1, 0, 196636, 1, 0, 196637, 1, 0, 196638, 1, 0, 196639, 1, 0, 196640, 1, 0, 196641, 1, 0, 196642, 1, 0, 196643, 1, 0, 196644, 1, 0, 196645, 1, 0, 196646, 1, 0, 196647, 1, 0, 262144, 1, 0, 262145, 1, 0, 262146, 1, 0, 262147, 1, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 262164, 1, 0, 262165, 1, 0, 262166, 1, 0, 262169, 1, 0, 262170, 1, 0, 262171, 1, 0, 262172, 1, 0, 262175, 1, 0, 262176, 1, 0, 262177, 1, 0, 262178, 1, 0, 262179, 1, 0, 262180, 1, 0, 262181, 1, 0, 262182, 1, 0, 262183, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327701, 1, 0, 327705, 1, 0, 327714, 1, 0, 327715, 1, 0, 327716, 1, 0, 327717, 1, 0, 327718, 1, 0, 327719, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393237, 1, 0, 393241, 1, 0, 393245, 1, 0, 393248, 1, 0, 393249, 1, 0, 393250, 1, 0, 393251, 1, 0, 393252, 1, 0, 393253, 1, 0, 393254, 1, 0, 393255, 1, 0, 458752, 1, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 1, 0, 458757, 1, 0, 458758, 1, 0, 458759, 1, 0, 458760, 1, 0, 458787, 1, 0, 458788, 1, 0, 458789, 1, 0, 458790, 1, 0, 458791, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524323, 1, 0, 524324, 1, 0, 524325, 1, 0, 524326, 1, 0, 524327, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589859, 1, 0, 589861, 1, 0, 589862, 1, 0, 589863, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0, 655364, 1, 0, 655396, 1, 0, 655397, 1, 0, 655398, 1, 0, 655399, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720932, 1, 0, 720933, 1, 0, 720934, 1, 0, 720935, 1, 0, 786432, 1, 0, 786433, 1, 0, 786434, 1, 0, 786468, 1, 0, 786469, 1, 0, 786470, 1, 0, 786471, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 852005, 1, 0, 852006, 1, 0, 852007, 1, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917518, 1, 0, 917522, 1, 0, 917523, 1, 0, 917527, 1, 0, 917528, 1, 0, 917540, 1, 0, 917541, 1, 0, 917542, 1, 0, 917543, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983049, 1, 0, 983050, 1, 0, 983078, 1, 0, 983079, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048613, 1, 0, 1048614, 1, 0, 1048615, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0, 1114151, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 1, 0, 1179687, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245190, 1, 0, 1245221, 1, 0, 1245222, 1, 0, 1245223, 1, 0, 1310720, 1, 0, 1310721, 1, 0, 1310727, 1, 0, 1310728, 1, 0, 1310758, 1, 0, 1310759, 1, 0, 1376256, 1, 0, 1376257, 1, 0, 1376295, 1, 0, 1441792, 1, 0, 1441793, 1, 0, 1441794, 1, 0, 1441820, 1, 0, 1441821, 1, 0, 1441822, 1, 0, 1441830, 1, 0, 1441831, 1, 0, 1507328, 1, 0, 1507329, 1, 0, 1507330, 1, 0, 1507331, 1, 0, 1507332, 1, 0, 1507338, 1, 0, 1507346, 1, 0, 1507357, 1, 0, 1507366, 1, 0, 1507367, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572866, 1, 0, 1572867, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572902, 1, 0, 1572903, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 320, 736 )
+position = Vector2( 108, 688 )
 collision_mask = 2
 
 [node name="TouchScreenButtons" parent="." instance=ExtResource( 3 )]

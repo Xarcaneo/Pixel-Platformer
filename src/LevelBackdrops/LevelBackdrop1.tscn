@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/UserInterface/LevelSelectButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/level backdrops/backdrop1.png" type="Texture" id=2]
+[ext_resource path="res://assets/backgrounds/background2.png" type="Texture" id=2]
 [ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StreamTexture" id=1]
@@ -79,7 +79,7 @@ margin_right = 928.092
 margin_bottom = 704.0
 texture_normal = SubResource( 1 )
 level = 7
-next_level_patch = "res://src/Levels/Level1-6.tscn"
+next_level_patch = "res://src/Levels/Level1-7.tscn"
 
 [node name="LevelSelectButton8" parent="." instance=ExtResource( 1 )]
 margin_left = 992.0
@@ -88,7 +88,7 @@ margin_right = 1056.0
 margin_bottom = 608.276
 texture_normal = SubResource( 1 )
 level = 8
-next_level_patch = "res://src/Levels/Level1-6.tscn"
+next_level_patch = "res://src/Levels/Level1-8.tscn"
 
 [node name="LevelSelectButton9" parent="." instance=ExtResource( 1 )]
 margin_left = 992.0
@@ -97,13 +97,13 @@ margin_right = 1056.0
 margin_bottom = 448.0
 texture_normal = SubResource( 1 )
 level = 9
-next_level_patch = "res://src/Levels/Level1-6.tscn"
+next_level_patch = "res://src/Levels/Level1-9.tscn"
 
 [node name="LevelSelectButton10" parent="." instance=ExtResource( 1 )]
-margin_left = 1088.0
-margin_top = 160.0
-margin_right = 1152.0
-margin_bottom = 224.0
+margin_left = 1056.09
+margin_top = 160.276
+margin_right = 1120.09
+margin_bottom = 224.276
 texture_normal = SubResource( 1 )
 level = 10
-next_level_patch = "res://src/Levels/Level1-6.tscn"
+next_level_patch = "res://src/Levels/Level1-10.tscn"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/objects/extra_empty.png" type="Texture" id=1]
-[ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/8bit_dynamic_font_buttons.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/UserInterface/LevelSelectButton.gd" type="Script" id=3]
 [ext_resource path="res://assets/UI/level_select_button1.png" type="Texture" id=4]
 [ext_resource path="res://assets/objects/extra_full.png" type="Texture" id=5]

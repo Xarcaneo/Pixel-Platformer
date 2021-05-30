@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/music/theme-2.ogg" type="AudioStream" id=10]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 5 )
+music_clip = ExtResource( 10 )
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 layer = 100

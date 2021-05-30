@@ -1,6 +1,6 @@
 extends Node2D
 
-export var music_clip: AudioStream = load("")
+export var music_clip: AudioStream 
 
 onready var coins: Node2D = $Coins
 

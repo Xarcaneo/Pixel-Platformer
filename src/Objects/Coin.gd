@@ -1,6 +1,6 @@
 extends Area2D
 
-export var sound_clip: AudioStream = load("")
+export var sound_clip: AudioStream 
 export var priority_sound: int
 
 onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")

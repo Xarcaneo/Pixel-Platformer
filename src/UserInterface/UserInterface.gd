@@ -4,7 +4,6 @@ onready var scene_tree: = get_tree()
 onready var pause_overlay: ColorRect = get_node("PauseOverlay")
 onready var coins: Label = get_node("CoinsPanel/Label")
 onready var coins_check_mark: Sprite = get_node("CoinsPanel/CheckMark_Sprite")
-onready var extra: Label = get_node("ExtraPanel/Label")
 onready var extra_check_mark: Sprite = get_node("ExtraPanel/CheckMark_Sprite")
 onready var extra_cross_sign: Sprite = get_node("ExtraPanel/CrossSign_Sprite")
 
