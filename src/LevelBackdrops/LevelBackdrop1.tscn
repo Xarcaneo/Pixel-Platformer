@@ -25,7 +25,7 @@ margin_top = 384.0
 margin_right = 117.878
 margin_bottom = 448.0
 level = 1
-next_level_patch = "res://src/Levels/Level1-1.tscn"
+next_level_patch = "res://src/Levels/1/Level01.tscn"
 
 [node name="LevelSelectButton2" parent="." instance=ExtResource( 1 )]
 margin_left = 352.0
@@ -34,7 +34,7 @@ margin_right = 416.0
 margin_bottom = 448.0
 texture_normal = SubResource( 1 )
 level = 2
-next_level_patch = "res://src/Levels/Level1-2.tscn"
+next_level_patch = "res://src/Levels/1/Level02.tscn"
 
 [node name="LevelSelectButton3" parent="." instance=ExtResource( 1 )]
 margin_left = 480.0
@@ -43,7 +43,7 @@ margin_right = 544.0
 margin_bottom = 256.0
 texture_normal = SubResource( 1 )
 level = 3
-next_level_patch = "res://src/Levels/Level1-3.tscn"
+next_level_patch = "res://src/Levels/1/Level03.tscn"
 
 [node name="LevelSelectButton4" parent="." instance=ExtResource( 1 )]
 margin_left = 672.0
@@ -52,7 +52,7 @@ margin_right = 736.0
 margin_bottom = 160.001
 texture_normal = SubResource( 1 )
 level = 4
-next_level_patch = "res://src/Levels/Level1-4.tscn"
+next_level_patch = "res://src/Levels/1/Level04.tscn"
 
 [node name="LevelSelectButton5" parent="." instance=ExtResource( 1 )]
 margin_left = 800.0
@@ -61,7 +61,7 @@ margin_right = 864.0
 margin_bottom = 352.0
 texture_normal = SubResource( 1 )
 level = 5
-next_level_patch = "res://src/Levels/Level1-5.tscn"
+next_level_patch = "res://src/Levels/1/Level05.tscn"
 
 [node name="LevelSelectButton6" parent="." instance=ExtResource( 1 )]
 margin_left = 672.092
@@ -70,7 +70,7 @@ margin_right = 736.092
 margin_bottom = 544.276
 texture_normal = SubResource( 1 )
 level = 6
-next_level_patch = "res://src/Levels/Level1-6.tscn"
+next_level_patch = "res://src/Levels/1/Level1-6.tscn"
 
 [node name="LevelSelectButton7" parent="." instance=ExtResource( 1 )]
 margin_left = 864.092
@@ -79,7 +79,7 @@ margin_right = 928.092
 margin_bottom = 704.0
 texture_normal = SubResource( 1 )
 level = 7
-next_level_patch = "res://src/Levels/Level1-7.tscn"
+next_level_patch = "res://src/Levels/1/Level1-7.tscn"
 
 [node name="LevelSelectButton8" parent="." instance=ExtResource( 1 )]
 margin_left = 992.0
@@ -88,7 +88,7 @@ margin_right = 1056.0
 margin_bottom = 608.276
 texture_normal = SubResource( 1 )
 level = 8
-next_level_patch = "res://src/Levels/Level1-8.tscn"
+next_level_patch = "res://src/Levels/1/Level1-8.tscn"
 
 [node name="LevelSelectButton9" parent="." instance=ExtResource( 1 )]
 margin_left = 992.0
@@ -97,7 +97,7 @@ margin_right = 1056.0
 margin_bottom = 448.0
 texture_normal = SubResource( 1 )
 level = 9
-next_level_patch = "res://src/Levels/Level1-9.tscn"
+next_level_patch = "res://src/Levels/1/Level1-9.tscn"
 
 [node name="LevelSelectButton10" parent="." instance=ExtResource( 1 )]
 margin_left = 1056.09
@@ -106,4 +106,4 @@ margin_right = 1120.09
 margin_bottom = 224.276
 texture_normal = SubResource( 1 )
 level = 10
-next_level_patch = "res://src/Levels/Level1-10.tscn"
+next_level_patch = "res://src/Levels/1/Level1-10.tscn"

@@ -90,6 +90,12 @@ volume_db = -30.0
 
 [node name="Sfx_player_3" type="AudioStreamPlayer" parent="Sfx"]
 
+[node name="Sfx_player_4" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_5" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_6" type="AudioStreamPlayer" parent="Sfx"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "start"
 anims/fade_in = SubResource( 1 )

@@ -34,8 +34,9 @@ func set_level_data() -> void:
 	
 	var extra_unlocked = false
 	if GameDataManager.level_info.size()  >= current_level + 1:
-		if GameDataManager.level_info[current_level + 1]["extra_unlocked"]:
-			extra_unlocked = true
+		if GameDataManager.level_info[current_level + 1].has("extra_unlocked"):
+			if GameDataManager.level_info[current_level + 1]["extra_unlocked"]:
+				extra_unlocked = true
 		
 	GameDataManager.level_info[current_level + 1] = {
 	"unlocked": true,

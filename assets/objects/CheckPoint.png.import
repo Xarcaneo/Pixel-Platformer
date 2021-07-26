@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tileset.png-31ae74ba9c5fa64be8f6914675537e6a.stex"
+path="res://.import/CheckPoint.png-bc3b1ad254275fe78e34a37481af9d8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset/Tileset.png"
-dest_files=[ "res://.import/Tileset.png-31ae74ba9c5fa64be8f6914675537e6a.stex" ]
+source_file="res://assets/objects/CheckPoint.png"
+dest_files=[ "res://.import/CheckPoint.png-bc3b1ad254275fe78e34a37481af9d8e.stex" ]
 
 [params]
 
