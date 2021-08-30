@@ -1,17 +1,24 @@
 extends Actor
 
 onready var animation_player: = $AnimationPlayer
+
 export var can_bounce = true
 export var can_move = true
 export var speach_bubble : PackedScene
 export var bumper_impulse: = 1500
 
 var last_checkpoint: Area2D = null
+var teleport_id = 0 
 
 onready var sprite: Sprite = $Sprite
 onready var checkpoint_tween: Tween = get_node("CheckPointTween")
+
+func _ready():
+	var current_skin = GameDataManager.load_player_data()
+	sprite.texture = load(GameDataManager.player_skins[current_skin])
 		
 func _on_StompDetector_area_entered(area: Area2D) -> void:
+
 	_velocity = calculate_stomp_velocity(_velocity, bumper_impulse)
 	
 func _physics_process(delta: float) -> void:
@@ -67,14 +74,20 @@ func bounce(
 func teleport():
 	animation_player.play("teleport")
 	
-func go_to_checkpoint() -> void:
-	set_collision_layer_bit(0, false) 
-	checkpoint_tween.interpolate_property(self, "position", position, last_checkpoint.position, 0.4, Tween.TRANS_EXPO, Tween.EASE_OUT)
-	checkpoint_tween.start()
+func use_portal(area):
+	for portal in get_tree().get_nodes_in_group("teleport"):
+		if(portal != area):
+			if(portal.id == area.id):
+				if(!portal.lock_portal):
+					#area.lock_portal = true
+					area.do_lock()
+					global_position = portal.global_position
 	
 func _on_DeadlyDetector_area_entered(area: Area2D) -> void:
 	if last_checkpoint != null:
-		go_to_checkpoint()
+		animation_player.play("die_animation")
+		yield(animation_player, "animation_finished")
+		get_tree().change_scene_to(GameDataManager.packed_scene)
 	else:
 		animation_player.play("die_animation")
 		yield(animation_player, "animation_finished")
@@ -86,5 +99,6 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	return out
 
 
-func _on_CheckPointTween_tween_all_completed():
-	set_collision_layer_bit(0, true) 
+func _on_TeleportDetector_area_entered(area):
+	if(!area.lock_portal):
+		use_portal(area)

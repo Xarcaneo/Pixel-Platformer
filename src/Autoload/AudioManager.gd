@@ -4,7 +4,6 @@ var dic : Dictionary = {}
 var master_sound = AudioServer.get_bus_index("Master")
 
 onready var music_player: AudioStreamPlayer = $Music/Music_player
-onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var sfx: Node = $Sfx
 
 func _ready() -> void:
@@ -67,11 +66,8 @@ func play_music(music_clip : AudioStream):
 		pass
 	else:
 		if music_player.stream != null:
-			animation_player.play("fade_out")
-			yield(animation_player,"animation_finished")
 			music_player.stream = music_clip
 			music_player.play()
-			animation_player.play("fade_in")
 		else:
 			music_player.stream = music_clip
 			music_player.play()

@@ -11,6 +11,7 @@ func _on_CheckPoint_player_entered(player):
 		if player.last_checkpoint != null:
 			player.last_checkpoint.desactivate()
 		player.last_checkpoint = self
+		LevelTemplate.save_checkpoint()
 		AudioManager.play_sfx(sound_clip, priority_sound)
 		animated_sprite.play("active")
 		active = true

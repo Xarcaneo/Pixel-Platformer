@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/actors/Player.png" type="Texture" id=1]
+[ext_resource path="res://assets/actors/Skin1.png" type="Texture" id=1]
 [ext_resource path="res://src/Particle/ExplosionParticle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/Speach Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
@@ -170,8 +170,6 @@ extents = Vector2( 16, 12 )
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 63
 script = ExtResource( 4 )
-can_bounce = false
-can_move = false
 speach_bubble = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -185,6 +183,7 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 2.54224, -1.12247 )
 current = true
+process_mode = 0
 limit_left = 0
 limit_top = 0
 limit_right = 1280
@@ -202,6 +201,16 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyDetector"]
+modulate = Color( 0.0941176, 0.027451, 0.027451, 1 )
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="TeleportDetector" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportDetector"]
 modulate = Color( 0.0941176, 0.027451, 0.027451, 1 )
 position = Vector2( 16, 16 )
 shape = SubResource( 2 )
@@ -228,5 +237,5 @@ shape = SubResource( 6 )
 [node name="CheckPointTween" type="Tween" parent="."]
 
 [connection signal="area_entered" from="DeadlyDetector" to="." method="_on_DeadlyDetector_area_entered"]
+[connection signal="area_entered" from="TeleportDetector" to="." method="_on_TeleportDetector_area_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
-[connection signal="tween_all_completed" from="CheckPointTween" to="." method="_on_CheckPointTween_tween_all_completed"]
