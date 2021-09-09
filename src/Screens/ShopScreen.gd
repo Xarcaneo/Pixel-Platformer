@@ -7,7 +7,7 @@ onready var current_skin_panel_sprite = get_node("CurrentSkinPanel/sprite")
 var extra_counter : = 0
 	
 func _ready():
-	for x in GameDataManager.level_info.size():
+	for x in GameDataManager.level_info.size() - 1:
 		if GameDataManager.level_info[x + 1].has("extra_unlocked"):
 			if GameDataManager.level_info[x + 1]["extra_unlocked"] == true:
 				extra_counter += 1

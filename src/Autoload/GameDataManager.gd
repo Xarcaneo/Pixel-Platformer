@@ -8,7 +8,9 @@ var player_skins = [
 	"res://assets/actors/Skin2.png",
 	"res://assets/actors/Skin3.png",
 	"res://assets/actors/Skin4.png",
-	"res://assets/actors/Skin5.png"
+	"res://assets/actors/Skin5.png",
+	"res://assets/actors/Skin6.png",
+	"res://assets/actors/Skin7.png"
 ]
 var current_skin : = 0
 var update_camera_position : = false
@@ -46,7 +48,6 @@ func load_data():
 	var err = file.open(path, File.READ)
 	if err != OK:
 		return default_level_info
-		print("something happened")
 	var read = {}
 	read = file.get_var()
 	return read
@@ -55,7 +56,6 @@ func save_screen_selector_data():
 	var file = File.new()
 	var err = file.open(path2, File.WRITE)
 	if err != OK:
-		print ("something went wrong")
 		return
 	file.store_var(current_h_scroll)
 	file.close()
@@ -65,7 +65,6 @@ func load_screen_selector_data():
 	var err = file.open(path2, File.READ)
 	if err != OK:
 		return 0
-		print("something happened")
 	var read : float 
 	read = file.get_var()
 	return read
@@ -84,7 +83,6 @@ func load_player_data():
 	var err = file.open(path3, File.READ)
 	if err != OK:
 		return 0
-		print("something happened")
 	var read : float 
 	read = file.get_var()
 	return read

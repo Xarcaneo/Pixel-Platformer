@@ -9,16 +9,17 @@ export var bumper_impulse: = 1500
 
 var last_checkpoint: Area2D = null
 var teleport_id = 0 
+var size
 
 onready var sprite: Sprite = $Sprite
 onready var checkpoint_tween: Tween = get_node("CheckPointTween")
-
+	
 func _ready():
 	var current_skin = GameDataManager.load_player_data()
 	sprite.texture = load(GameDataManager.player_skins[current_skin])
-		
-func _on_StompDetector_area_entered(area: Area2D) -> void:
+	size = sprite.get_texture().get_size() * sprite.get_scale()
 
+func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, bumper_impulse)
 	
 func _physics_process(delta: float) -> void:
@@ -29,14 +30,13 @@ func _physics_process(delta: float) -> void:
 	if can_move:
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 
-		
 func  _create_speach_bubble(text: String) -> void:
 	var new_bubble = speach_bubble.instance()
 	new_bubble.bubble_text = text
 	new_bubble.global_position = Vector2(sprite.position.x, sprite.position.y - 50)
 	add_child(new_bubble)
 	Input.action_release("ui_touch")
-	
+
 func check_speach_bubble() -> void:
 	if has_node("Speach Bubble"):
 		can_move = false
