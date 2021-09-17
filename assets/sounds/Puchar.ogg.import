@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Puchar.ogg-5296e640ae5ccb52c89fc402ff6573cb.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Puchar.ogg"
+dest_files=[ "res://.import/Puchar.ogg-5296e640ae5ccb52c89fc402ff6573cb.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

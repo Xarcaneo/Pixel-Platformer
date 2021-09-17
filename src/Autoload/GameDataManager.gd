@@ -10,7 +10,9 @@ var player_skins = [
 	"res://assets/actors/Skin4.png",
 	"res://assets/actors/Skin5.png",
 	"res://assets/actors/Skin6.png",
-	"res://assets/actors/Skin7.png"
+	"res://assets/actors/Skin7.png",
+	"res://assets/actors/Skin8.png",
+	"res://assets/actors/Skin9.png"
 ]
 var current_skin : = 0
 var update_camera_position : = false

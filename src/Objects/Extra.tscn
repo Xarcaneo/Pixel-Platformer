@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/objects/extra_full.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Extra.gd" type="Script" id=2]
-[ext_resource path="res://assets/sounds/Extra_pickup.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/Puchar.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.65361, 10.3427 )

@@ -10,7 +10,7 @@
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Levels/2/Level15.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/music/Chapter2soundtrack.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/music/Stage 02.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=12]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/Bumper.tscn" type="PackedScene" id=15]
@@ -60,9 +60,6 @@ position = Vector2( 448, 480 )
 
 [node name="BreakingPlatform5" parent="Breaking Platforms" instance=ExtResource( 16 )]
 position = Vector2( 640, 512 )
-
-[node name="BreakingPlatform6" parent="Breaking Platforms" instance=ExtResource( 16 )]
-position = Vector2( 640, 546 )
 
 [node name="BreakingPlatform7" parent="Breaking Platforms" instance=ExtResource( 16 )]
 position = Vector2( 800, 512 )

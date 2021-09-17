@@ -15,7 +15,7 @@
 [ext_resource path="res://src/Obstacles/BreakingPlatform.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Objects/Bumper.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Obstacles/FallingPlatform.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/music/Chapter3soundtrack.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/music/Stage 03.ogg" type="AudioStream" id=16]
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=19]
@@ -23,14 +23,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -39,14 +39,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 

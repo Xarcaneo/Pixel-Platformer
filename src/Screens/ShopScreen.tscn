@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Screens/ShopScreen.gd" type="Script" id=1]
-[ext_resource path="res://assets/music/MainMenuTheme.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/objects/extra_full.png" type="Texture" id=3]
 [ext_resource path="res://assets/backgrounds/background3.png" type="Texture" id=4]
 [ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=5]
@@ -153,6 +153,20 @@ margin_right = 768.0
 margin_bottom = 0.0
 price = 30
 skin_index = 6
+
+[node name="SkinSelector8" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 896.0
+margin_right = 896.0
+margin_bottom = 0.0
+price = 35
+skin_index = 7
+
+[node name="SkinSelector9" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 1024.0
+margin_right = 1024.0
+margin_bottom = 0.0
+price = 40
+skin_index = 8
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -100

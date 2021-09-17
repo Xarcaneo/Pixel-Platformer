@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UserInterface/GooglePlayButton.gd" type="Script" id=1]
+
+[node name="GooglePlayButton" type="Button"]
+margin_right = 224.0
+margin_bottom = 64.0
+text = "RATE"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_GooglePlayButton_pressed"]

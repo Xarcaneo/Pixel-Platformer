@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Levels/2/Level19.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/music/Chapter2soundtrack.mp3" type="AudioStream" id=13]
+[ext_resource path="res://assets/music/Stage 02.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=14]
 [ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=15]
 

@@ -9,7 +9,7 @@
 [ext_resource path="res://src/Levels/1/Level02.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/music/Chapter1soundtrack.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/music/Stage 01.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=11]
 [ext_resource path="res://src/Tilemap/TileBackground.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=13]

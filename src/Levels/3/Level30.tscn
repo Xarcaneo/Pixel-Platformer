@@ -18,19 +18,19 @@
 [ext_resource path="res://src/Obstacles/FallingPlatform.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=18]
-[ext_resource path="res://assets/music/Chapter3soundtrack.mp3" type="AudioStream" id=19]
+[ext_resource path="res://assets/music/Stage 03.ogg" type="AudioStream" id=19]
 [ext_resource path="res://src/Levels/4/Level31.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -188,6 +188,7 @@ modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
 
 [node name="AnimatedSprite" parent="Teleport/Teleport" index="1"]
 frames = SubResource( 1 )
+animation = "Pyramid"
 
 [node name="CollisionShape2D" parent="Teleport/Teleport" index="2"]
 shape = SubResource( 2 )
@@ -200,6 +201,7 @@ modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
 
 [node name="AnimatedSprite" parent="Teleport/Teleport2" index="1"]
 frames = SubResource( 1 )
+animation = "Pyramid"
 
 [node name="CollisionShape2D" parent="Teleport/Teleport2" index="2"]
 shape = SubResource( 2 )

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/actors/Skin1.png" type="Texture" id=1]
 [ext_resource path="res://src/Particle/ExplosionParticle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/Speach Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/Jump.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.9, 15.9 )
@@ -74,6 +75,30 @@ tracks/4/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:collision_layer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:collision_mask")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 255 ]
+}
 
 [sub_resource type="Animation" id=4]
 tracks/0/type = "value"
@@ -124,6 +149,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:collision_layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "teleport"
@@ -170,7 +219,11 @@ extents = Vector2( 16, 12 )
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 255
 script = ExtResource( 4 )
+can_bounce = false
+can_move = false
 speach_bubble = ExtResource( 3 )
+sound_clip = ExtResource( 5 )
+priority_sound = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 16, 16 )
@@ -183,7 +236,7 @@ shape = SubResource( 1 )
 [node name="DeadlyDetector" type="Area2D" parent="."]
 monitorable = false
 collision_layer = 0
-collision_mask = 4
+collision_mask = 260
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadlyDetector"]
 modulate = Color( 0.0941176, 0.027451, 0.027451, 1 )

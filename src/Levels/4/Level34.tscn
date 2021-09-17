@@ -1,0 +1,256 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=5]
+[ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Obstacles/Dispeaner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Objects/Bumper.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/backgrounds/background2.png" type="Texture" id=11]
+[ext_resource path="res://src/Levels/4/Level35.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Obstacles/FallingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/music/Stage 04.ogg" type="AudioStream" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Move"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1216, 512 ), Vector2( 1216, 704 ), Vector2( 1216, 512 ) ]
+}
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 5 )
+music_clip = ExtResource( 16 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 800.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 4 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 6, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 6, 0, 5, 5, 0, 6, 6, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 6, 0, 12, 5, 0, 13, 5, 0, 14, 5, 0, 15, 6, 0, 16, 5, 0, 17, 6, 0, 18, 6, 0, 19, 5, 0, 20, 6, 0, 21, 6, 0, 22, 6, 0, 23, 5, 0, 24, 5, 0, 25, 5, 0, 26, 5, 0, 27, 6, 0, 28, 5, 0, 29, 5, 0, 30, 5, 0, 31, 5, 0, 32, 5, 0, 33, 6, 0, 34, 5, 0, 35, 6, 0, 36, 6, 0, 37, 5, 0, 38, 5, 0, 39, 6, 0, 65536, 5, 0, 65537, 5, 0, 65538, 6, 0, 65539, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 6, 0, 65548, 5, 0, 65549, 5, 0, 65550, 6, 0, 65553, 6, 0, 65554, 5, 0, 65557, 5, 0, 65558, 6, 0, 65562, 6, 0, 65563, 5, 0, 65567, 6, 0, 65568, 5, 0, 65569, 6, 0, 65570, 5, 0, 65571, 6, 0, 65572, 6, 0, 65573, 5, 0, 65574, 5, 0, 65575, 6, 0, 131072, 5, 0, 131073, 6, 0, 131108, 6, 0, 131109, 6, 0, 131110, 5, 0, 131111, 5, 0, 196608, 6, 0, 196609, 5, 0, 196646, 6, 0, 196647, 6, 0, 262144, 6, 0, 262182, 6, 0, 262183, 5, 0, 327680, 6, 0, 327718, 6, 0, 327719, 6, 0, 393216, 5, 0, 393254, 6, 0, 393255, 5, 0, 458752, 5, 0, 458790, 6, 0, 458791, 6, 0, 524288, 5, 0, 524293, 5, 0, 524294, 6, 0, 524295, 5, 0, 524296, 6, 0, 524297, 5, 0, 524298, 5, 0, 524299, 5, 0, 524300, 5, 0, 524301, 6, 0, 524302, 6, 0, 524303, 5, 0, 524304, 5, 0, 524305, 5, 0, 524306, 6, 0, 524307, 5, 0, 524308, 6, 0, 524309, 5, 0, 524310, 5, 0, 524314, 6, 0, 524315, 6, 0, 524326, 6, 0, 524327, 5, 0, 589824, 6, 0, 589825, 5, 0, 589829, 6, 0, 589851, 6, 0, 589852, 5, 0, 589862, 6, 0, 589863, 6, 0, 655360, 6, 0, 655361, 6, 0, 655365, 6, 0, 655387, 5, 0, 655388, 5, 0, 655398, 6, 0, 655399, 6, 0, 720896, 6, 0, 720901, 5, 0, 720923, 6, 0, 720924, 6, 0, 720925, 5, 0, 720926, 5, 0, 720935, 5, 0, 786432, 5, 0, 786437, 6, 0, 786458, 5, 0, 786459, 6, 0, 786460, 6, 0, 786461, 6, 0, 786462, 5, 0, 786463, 5, 0, 786470, 5, 0, 786471, 6, 0, 851968, 5, 0, 851969, 5, 0, 851973, 6, 0, 851993, 6, 0, 851994, 5, 0, 851995, 6, 0, 851996, 6, 0, 851997, 5, 0, 851998, 6, 0, 851999, 5, 0, 852006, 6, 0, 852007, 5, 0, 917504, 5, 0, 917505, 6, 0, 917509, 5, 0, 917510, 6, 0, 917511, 5, 0, 917512, 5, 0, 917513, 5, 0, 917514, 6, 0, 917515, 6, 0, 917516, 5, 0, 917517, 5, 0, 917518, 5, 0, 917519, 5, 0, 917520, 5, 0, 917521, 6, 0, 917522, 5, 0, 917523, 6, 0, 917524, 5, 0, 917525, 5, 0, 917526, 5, 0, 917527, 6, 0, 917528, 6, 0, 917529, 6, 0, 917530, 5, 0, 917531, 6, 0, 917532, 5, 0, 917533, 5, 0, 917534, 5, 0, 917535, 5, 0, 917536, 6, 0, 917537, 6, 0, 917538, 5, 0, 917542, 5, 0, 917543, 6, 0, 983040, 6, 0, 983047, 5, 0, 983048, 6, 0, 983049, 6, 0, 983051, 6, 0, 983052, 6, 0, 983053, 6, 0, 983054, 5, 0, 983055, 6, 0, 983056, 5, 0, 983058, 6, 0, 983059, 6, 0, 983060, 6, 0, 983061, 6, 0, 983062, 6, 0, 983063, 6, 0, 983064, 5, 0, 983065, 5, 0, 983070, 5, 0, 983071, 6, 0, 983078, 5, 0, 983079, 5, 0, 1048576, 6, 0, 1048577, 5, 0, 1048590, 5, 0, 1048591, 6, 0, 1048592, 6, 0, 1048615, 6, 0, 1114112, 6, 0, 1114113, 5, 0, 1114126, 5, 0, 1114127, 5, 0, 1114151, 6, 0, 1179648, 6, 0, 1179662, 5, 0, 1179687, 5, 0, 1245184, 6, 0, 1245185, 5, 0, 1245195, 5, 0, 1245223, 5, 0, 1310720, 6, 0, 1310721, 5, 0, 1310731, 5, 0, 1310759, 6, 0, 1376256, 6, 0, 1376257, 6, 0, 1376267, 5, 0, 1376268, 5, 0, 1376295, 5, 0, 1441792, 5, 0, 1441793, 5, 0, 1441802, 5, 0, 1441803, 6, 0, 1441804, 6, 0, 1441805, 6, 0, 1441829, 5, 0, 1441831, 6, 0, 1507328, 6, 0, 1507329, 5, 0, 1507330, 5, 0, 1507332, 6, 0, 1507333, 6, 0, 1507334, 5, 0, 1507335, 5, 0, 1507336, 5, 0, 1507337, 6, 0, 1507338, 6, 0, 1507339, 5, 0, 1507340, 6, 0, 1507341, 5, 0, 1507342, 5, 0, 1507343, 6, 0, 1507344, 5, 0, 1507345, 5, 0, 1507346, 5, 0, 1507347, 5, 0, 1507348, 5, 0, 1507349, 6, 0, 1507350, 5, 0, 1507351, 6, 0, 1507352, 6, 0, 1507353, 5, 0, 1507354, 5, 0, 1507355, 6, 0, 1507356, 5, 0, 1507357, 6, 0, 1507358, 6, 0, 1507359, 6, 0, 1507360, 6, 0, 1507361, 6, 0, 1507362, 5, 0, 1507363, 6, 0, 1507364, 5, 0, 1507365, 5, 0, 1507366, 5, 0, 1507367, 5, 0, 1572864, 6, 0, 1572865, 6, 0, 1572866, 6, 0, 1572867, 5, 0, 1572868, 5, 0, 1572869, 6, 0, 1572870, 6, 0, 1572871, 6, 0, 1572872, 6, 0, 1572873, 6, 0, 1572874, 6, 0, 1572875, 6, 0, 1572876, 6, 0, 1572877, 6, 0, 1572878, 5, 0, 1572879, 5, 0, 1572880, 5, 0, 1572881, 5, 0, 1572882, 6, 0, 1572883, 5, 0, 1572884, 6, 0, 1572885, 5, 0, 1572886, 5, 0, 1572887, 5, 0, 1572888, 5, 0, 1572889, 5, 0, 1572890, 6, 0, 1572891, 6, 0, 1572892, 6, 0, 1572893, 5, 0, 1572894, 5, 0, 1572895, 6, 0, 1572896, 6, 0, 1572897, 6, 0, 1572898, 6, 0, 1572899, 6, 0, 1572900, 6, 0, 1572901, 6, 0, 1572902, 6, 0, 1572903, 6, 0 )
+
+[node name="TouchScreenButtons" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 640 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 608 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 576 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 544 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 512 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 480 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 448 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 416 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 384 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 512 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 480 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 448 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 416 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 384 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 352 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 320 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 288 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 96, 256 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 672 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 640 )
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 608 )
+
+[node name="Coin23" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 576 )
+
+[node name="Coin24" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 544 )
+
+[node name="Coin25" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 512 )
+
+[node name="Coin26" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 480 )
+
+[node name="Coin27" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 448 )
+
+[node name="Coin28" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 416 )
+
+[node name="Coin29" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 1152, 384 )
+
+[node name="Coin30" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 448, 226 )
+
+[node name="Coin31" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 448, 192 )
+
+[node name="Coin32" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 256, 192 )
+
+[node name="Coin33" parent="Coins" instance=ExtResource( 10 )]
+position = Vector2( 256, 224 )
+
+[node name="Dispeanser" type="Node2D" parent="."]
+
+[node name="Dispeaner" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 96, 736 )
+wait_time = 0.3
+fireball_speed = 450
+
+[node name="Dispeaner3" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 608, 416 )
+wait_time = 0.8
+fireball_speed = 400
+
+[node name="Dispeaner4" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 480, 416 )
+wait_time = 0.8
+fireball_speed = 400
+
+[node name="Dispeaner5" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 352, 416 )
+wait_time = 0.8
+fireball_speed = 400
+
+[node name="Dispeaner6" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 608, 288 )
+wait_time = 0.8
+fireball_direction = "DOWN"
+fireball_speed = 400
+
+[node name="Dispeaner7" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 480, 288 )
+wait_time = 0.8
+fireball_direction = "DOWN"
+fireball_speed = 400
+
+[node name="Dispeaner8" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 352, 288 )
+wait_time = 0.8
+fireball_direction = "DOWN"
+fireball_speed = 400
+
+[node name="Dispeaner2" parent="Dispeanser" instance=ExtResource( 8 )]
+position = Vector2( 1216, 512 )
+wait_time = 1.0
+fireball_direction = "LEFT"
+fireball_speed = 200
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dispeanser/Dispeaner2"]
+autoplay = "Move"
+anims/Move = SubResource( 1 )
+
+[node name="Falling Platform" type="Node2D" parent="."]
+
+[node name="FallingPlatform" parent="Falling Platform" instance=ExtResource( 13 )]
+position = Vector2( 96, 224 )
+
+[node name="Bumper" type="Node2D" parent="."]
+
+[node name="Bumper" parent="Bumper" instance=ExtResource( 9 )]
+position = Vector2( 1152, 704 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike4" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 576, 224 )
+
+[node name="Spike6" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 544, 224 )
+
+[node name="Spike8" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 512, 224 )
+
+[node name="Spike10" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 384, 224 )
+
+[node name="Spike12" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 352, 224 )
+
+[node name="Spike13" parent="Spikes" instance=ExtResource( 15 )]
+position = Vector2( 320, 224 )
+
+[node name="Extra" parent="." instance=ExtResource( 7 )]
+position = Vector2( 256, 352 )
+
+[node name="Portal" parent="." instance=ExtResource( 14 )]
+position = Vector2( 320, 640 )
+current_level = 34
+next_scene = ExtResource( 12 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 704 )
+collision_mask = 2
+
+[editable path="Dispeanser/Dispeaner2"]

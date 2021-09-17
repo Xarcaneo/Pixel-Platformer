@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=5]
 [ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/backgrounds/background2.png" type="Texture" id=7]
-[ext_resource path="res://assets/music/Chapter3soundtrack.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/music/Stage 03.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Teleport.tscn" type="PackedScene" id=11]
@@ -20,14 +20,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -36,14 +36,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -52,14 +52,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -68,14 +68,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -84,14 +84,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 

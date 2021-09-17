@@ -15,7 +15,7 @@
 [ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Levels/3/Level24.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/music/Chapter3soundtrack.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/music/Stage 03.ogg" type="AudioStream" id=16]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 5 )
@@ -41,11 +41,17 @@ position = Vector2( 256, 320 )
 [node name="Sprite" parent="Teleport/Teleport" index="0"]
 modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
 
+[node name="AnimatedSprite" parent="Teleport/Teleport" index="1"]
+animation = "Pyramid"
+
 [node name="Teleport2" parent="Teleport" instance=ExtResource( 9 )]
 position = Vector2( 514, 96 )
 
 [node name="Sprite" parent="Teleport/Teleport2" index="0"]
 modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
+
+[node name="AnimatedSprite" parent="Teleport/Teleport2" index="1"]
+animation = "Pyramid"
 
 [node name="Teleport3" parent="Teleport" instance=ExtResource( 9 )]
 position = Vector2( 448, 320 )
@@ -54,12 +60,18 @@ id = 1
 [node name="Sprite" parent="Teleport/Teleport3" index="0"]
 modulate = Color( 0.223529, 0.278431, 0.470588, 1 )
 
+[node name="AnimatedSprite" parent="Teleport/Teleport3" index="1"]
+animation = "Pyramid"
+
 [node name="Teleport4" parent="Teleport" instance=ExtResource( 9 )]
 position = Vector2( 1184, 544 )
 id = 1
 
 [node name="Sprite" parent="Teleport/Teleport4" index="0"]
 modulate = Color( 0.223529, 0.278431, 0.470588, 1 )
+
+[node name="AnimatedSprite" parent="Teleport/Teleport4" index="1"]
+animation = "Pyramid"
 
 [node name="Teleport5" parent="Teleport" instance=ExtResource( 9 )]
 position = Vector2( 832, 128 )
@@ -68,12 +80,18 @@ id = 2
 [node name="Sprite" parent="Teleport/Teleport5" index="0"]
 modulate = Color( 0.556863, 0.278431, 0.54902, 1 )
 
+[node name="AnimatedSprite" parent="Teleport/Teleport5" index="1"]
+animation = "Pyramid"
+
 [node name="Teleport6" parent="Teleport" instance=ExtResource( 9 )]
 position = Vector2( 576, 320 )
 id = 2
 
 [node name="Sprite" parent="Teleport/Teleport6" index="0"]
 modulate = Color( 0.556863, 0.278431, 0.54902, 1 )
+
+[node name="AnimatedSprite" parent="Teleport/Teleport6" index="1"]
+animation = "Pyramid"
 
 [node name="Lava" type="Node2D" parent="."]
 

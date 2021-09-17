@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Levels/2/Level13.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/music/Chapter2soundtrack.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/music/Stage 02.ogg" type="AudioStream" id=9]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=12]

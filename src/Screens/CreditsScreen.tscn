@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Scripts/AudioShared.gd" type="Script" id=1]
-[ext_resource path="res://assets/music/MainMenuTheme.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=2]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/backgrounds/background3.png" type="Texture" id=4]
 [ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=5]
@@ -27,22 +27,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" parent="." instance=ExtResource( 3 )]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = -144.0
-margin_top = -293.0
-margin_right = 144.0
-margin_bottom = -229.0
-text = "Credits"
-
 [node name="Credits" parent="." instance=ExtResource( 3 )]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = -248.0
-margin_top = -144.0
-margin_right = 248.0
-margin_bottom = -80.0
-text = "Patryk Dudka"
+margin_left = -376.5
+margin_top = -266.5
+margin_right = 376.5
+margin_bottom = 266.5
+text = "Programming:
+Patryk Dudka
+
+Graphic/Design:
+Patryk Dudka
+
+Music/SFX
+kuba pietrzykowski"
+align = 1
 
 [node name="MainMenuTouchButton" parent="." instance=ExtResource( 5 )]

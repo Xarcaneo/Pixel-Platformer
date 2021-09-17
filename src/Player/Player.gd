@@ -7,6 +7,9 @@ export var can_move = true
 export var speach_bubble : PackedScene
 export var bumper_impulse: = 1500
 
+export var sound_clip: AudioStream 
+export var priority_sound: int
+
 var last_checkpoint: Area2D = null
 var teleport_id = 0 
 var size
@@ -21,6 +24,7 @@ func _ready():
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, bumper_impulse)
+	AudioManager.play_sfx(sound_clip, priority_sound)
 	
 func _physics_process(delta: float) -> void:
 	var direction: = _get_direction()
@@ -84,14 +88,7 @@ func use_portal(area):
 					global_position = portal.global_position
 	
 func _on_DeadlyDetector_area_entered(area: Area2D) -> void:
-	if last_checkpoint != null:
-		animation_player.play("die_animation")
-		yield(animation_player, "animation_finished")
-		get_tree().change_scene_to(GameDataManager.packed_scene)
-	else:
-		animation_player.play("die_animation")
-		yield(animation_player, "animation_finished")
-		get_tree().reload_current_scene()
+	kill()
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 	var out: = linear_velocity
@@ -102,3 +99,13 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 func _on_TeleportDetector_area_entered(area):
 	if(!area.lock_portal):
 		use_portal(area)
+
+func kill():
+	if last_checkpoint != null:
+		animation_player.play("die_animation")
+		yield(animation_player, "animation_finished")
+		get_tree().change_scene_to(GameDataManager.packed_scene)
+	else:
+		animation_player.play("die_animation")
+		yield(animation_player, "animation_finished")
+		get_tree().reload_current_scene()	
