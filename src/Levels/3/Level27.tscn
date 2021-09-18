@@ -21,14 +21,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Pyramid",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Pyramid",
 "speed": 5.0
 } ]
 
@@ -37,14 +37,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Pyramid",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Pyramid",
 "speed": 5.0
 } ]
 
@@ -53,14 +53,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Pyramid",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Pyramid",
 "speed": 5.0
 } ]
 
@@ -69,14 +69,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Pyramid",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Pyramid",
 "speed": 5.0
 } ]
 
@@ -85,14 +85,14 @@ extents = Vector2( 16, 16 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Pyramid",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Pyramid",
 "speed": 5.0
 } ]
 
@@ -325,9 +325,6 @@ position = Vector2( 1152, 512 )
 
 [node name="Spike2" parent="Spikes" instance=ExtResource( 12 )]
 position = Vector2( 1120, 512 )
-
-[node name="Spike3" parent="Spikes" instance=ExtResource( 12 )]
-position = Vector2( 1088, 512 )
 
 [node name="Spike4" parent="Spikes" instance=ExtResource( 12 )]
 position = Vector2( 1024, 512 )

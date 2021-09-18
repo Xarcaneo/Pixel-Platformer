@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/UserInterface/GooglePlayButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/UserInterface/GooglePlayButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/UI/Icons_40.png" type="Texture" id=3]
 [ext_resource path="res://assets/UI/popupscreen.png" type="Texture" id=4]
 
@@ -54,15 +53,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GooglePlayButton" type="Button" parent="." instance=ExtResource( 1 )]
+[node name="GooglePlayButton" parent="." instance=ExtResource( 1 )]
 margin_left = 512.0
 margin_top = 493.0
 margin_right = 768.0
 margin_bottom = 576.0
-text = "RATE"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="GooglePlayButton" to="GooglePlayButton" method="_on_GooglePlayButton_pressed"]

@@ -5,14 +5,14 @@ var _play_services = null
 func _ready():
 	_init()
 	_connect_signals()
-	sign_in()
+#	sign_in()
 	
 func _init() -> void:
 	if Engine.has_singleton("GodotPlayGamesServices"):
 		_play_services = Engine.get_singleton("GodotPlayGamesServices")
 		
 		_play_services.init(true)
-	
+		
 func sign_in() -> void:
 	if _play_services:
 		_play_services.signIn()
