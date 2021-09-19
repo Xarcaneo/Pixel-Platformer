@@ -23,14 +23,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Cave",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Cave",
 "speed": 5.0
 } ]
 
@@ -345,7 +345,7 @@ position = Vector2( 1056, 448 )
 position = Vector2( 1024, 448 )
 
 [node name="Extra" parent="." instance=ExtResource( 17 )]
-position = Vector2( 480, 160 )
+position = Vector2( 480, 128 )
 
 [node name="Coins" type="Node2D" parent="."]
 
