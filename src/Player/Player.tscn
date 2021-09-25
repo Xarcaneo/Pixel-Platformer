@@ -2,7 +2,6 @@
 
 [ext_resource path="res://assets/actors/Skin1.png" type="Texture" id=1]
 [ext_resource path="res://src/Particle/ExplosionParticle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/UserInterface/Speach Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://assets/sounds/Jump.ogg" type="AudioStream" id=5]
 
@@ -28,7 +27,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:can_move")
+tracks/1/path = NodePath("Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -36,11 +35,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:scale")
+tracks/2/path = NodePath("ExplosionParticle:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -48,11 +47,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"update": 1,
+"values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath(".:can_bounce")
+tracks/3/path = NodePath(".:collision_layer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -61,10 +60,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ 1 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("ExplosionParticle:emitting")
+tracks/4/path = NodePath(".:collision_mask")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -73,10 +72,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 255 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath(".:collision_layer")
+tracks/5/path = NodePath(".:can_move")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -85,22 +84,14 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath(".:collision_mask")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 255 ]
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
+resource_name = "bounce"
+length = 0.1
+
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:visible")
 tracks/0/interp = 1
@@ -114,7 +105,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:can_move")
+tracks/1/path = NodePath("ExplosionParticle:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -123,10 +114,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:can_bounce")
+tracks/2/path = NodePath(".:collision_layer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -135,10 +126,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ExplosionParticle:emitting")
+tracks/3/path = NodePath(".:collision_mask")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -147,10 +138,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ 0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath(".:collision_layer")
+tracks/4/path = NodePath(".:can_move")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -159,23 +150,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "teleport"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -189,7 +167,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:can_bounce")
+tracks/1/path = NodePath(".:can_move")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -200,28 +178,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:can_move")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16, 12 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 255
 script = ExtResource( 4 )
-can_bounce = false
-can_move = false
-speach_bubble = ExtResource( 3 )
 sound_clip = ExtResource( 5 )
 priority_sound = 1
 
@@ -256,8 +219,9 @@ shape = SubResource( 2 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "START"
 anims/START = SubResource( 3 )
-anims/die_animation = SubResource( 4 )
-anims/teleport = SubResource( 5 )
+anims/bounce = SubResource( 4 )
+anims/die_animation = SubResource( 5 )
+anims/teleport = SubResource( 6 )
 
 [node name="ExplosionParticle" parent="." instance=ExtResource( 2 )]
 position = Vector2( 16.6727, 16.5 )
@@ -270,7 +234,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
 modulate = Color( 0.447059, 0.109804, 0.109804, 1 )
 position = Vector2( 16, 20.5 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CheckPointTween" type="Tween" parent="."]
 

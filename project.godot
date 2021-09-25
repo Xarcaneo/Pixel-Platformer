@@ -47,20 +47,23 @@ _global_script_class_icons={
 config/name="Pixel Platformer"
 run/main_scene="res://src/Screens/MainMenu.tscn"
 boot_splash/image="res://assets/UI/Splash.png"
-boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://assets/UI/Icon.png"
 
 [autoload]
 
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 ConfigManager="*res://src/Autoload/ConfigManager.gd"
 GameDataManager="*res://src/Autoload/GameDataManager.gd"
 AudioManager="*res://src/Autoload/AudioManager.tscn"
 PlayerData="*res://src/Autoload/PlayerData.tscn"
-LevelTemplate="*res://src/Levels/LevelTemplate.gd"
+PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
+IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
+UserData="*res://addons/github-integration/scripts/user_data.gd"
+RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+
+[debug]
+
+settings/stdout/verbose_stdout=true
 
 [display]
 
@@ -69,20 +72,12 @@ window/size/height=800
 window/size/always_on_top=true
 window/size/test_width=640
 window/size/test_height=400
+window/handheld/orientation="sensor_landscape"
 window/stretch/mode="2d"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
-
-[global]
-
-EDIT=false
-pixel=false
-ICON=false
-scree=false
-window=false
-icon=false
 
 [input]
 
@@ -123,12 +118,14 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
+quality/reflections/irradiance_max_size=32
 batching/options/use_batching=false
 batching/options/use_batching_in_editor=false
+gles2/compatibility/disable_half_float=true
 batching/precision/uv_contract=true
 quality/depth/hdr=false
+quality/dynamic_fonts/use_oversampling=false
 
 [world]
 

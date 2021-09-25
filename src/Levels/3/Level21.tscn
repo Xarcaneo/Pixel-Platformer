@@ -47,6 +47,9 @@ position = Vector2( 514, 480 )
 [node name="Sprite" parent="Teleports/Teleport" index="0"]
 modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
 
+[node name="AnimatedSprite" parent="Teleports/Teleport" index="1"]
+animation = "Cave"
+
 [node name="Teleport2" parent="Teleports" instance=ExtResource( 7 )]
 position = Vector2( 864, 352 )
 

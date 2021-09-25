@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Levels/4/Level38.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/music/Stage 04.ogg" type="AudioStream" id=12]
-[ext_resource path="res://src/Obstacles/Dispeaner.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=15]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 5 )

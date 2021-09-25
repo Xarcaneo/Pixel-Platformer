@@ -12,10 +12,10 @@
 [ext_resource path="res://src/Obstacles/FallingPlatform.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Obstacles/MovingBlock.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/Obstacles/Dispeaner.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/Obstacles/Dispeaner.gd" type="Script" id=16]
+[ext_resource path="res://src/Obstacles/Dispeanser.gd" type="Script" id=16]
 [ext_resource path="res://assets/objects/dispeaner.png" type="Texture" id=17]
 [ext_resource path="res://assets/music/Stage 04.ogg" type="AudioStream" id=18]
 
@@ -358,16 +358,9 @@ script = ExtResource( 16 )
 wait_time = 0.8
 fireball_direction = "DOWN"
 
-[node name="Sprite" type="Sprite" parent="Dispeansers/Dispeanser4"]
-position = Vector2( 16, 16 )
-texture = ExtResource( 17 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dispeansers/Dispeanser4"]
 position = Vector2( 16, 16 )
 shape = SubResource( 2 )
-
-[node name="Position2D" type="Position2D" parent="Dispeansers/Dispeanser4"]
-position = Vector2( 16.0062, 16.0134 )
 
 [node name="Timer" type="Timer" parent="Dispeansers/Dispeanser4"]
 wait_time = 3.0
@@ -376,6 +369,16 @@ wait_time = 3.0
 autoplay = "MOVE"
 anims/MOVE = SubResource( 3 )
 
+[node name="Sprite" type="Sprite" parent="Dispeansers/Dispeanser4"]
+position = Vector2( 16, 16 )
+texture = ExtResource( 17 )
+
+[node name="Position2D" type="Position2D" parent="Dispeansers/Dispeanser4/Sprite"]
+position = Vector2( -1.90735e-06, -23.4746 )
+__meta__ = {
+"_gizmo_extents_": 2.0
+}
+
 [node name="Dispeanser7" type="StaticBody2D" parent="Dispeansers"]
 position = Vector2( 288, 448 )
 collision_layer = 2048
@@ -383,16 +386,9 @@ collision_mask = 513
 script = ExtResource( 16 )
 wait_time = 1.0
 
-[node name="Sprite" type="Sprite" parent="Dispeansers/Dispeanser7"]
-position = Vector2( 16, 16 )
-texture = ExtResource( 17 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dispeansers/Dispeanser7"]
 position = Vector2( 16, 16 )
 shape = SubResource( 2 )
-
-[node name="Position2D" type="Position2D" parent="Dispeansers/Dispeanser7"]
-position = Vector2( 16.0062, 16.0134 )
 
 [node name="Timer" type="Timer" parent="Dispeansers/Dispeanser7"]
 wait_time = 3.0
@@ -400,6 +396,16 @@ wait_time = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dispeansers/Dispeanser7"]
 autoplay = "Move"
 anims/Move = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Dispeansers/Dispeanser7"]
+position = Vector2( 16, 16 )
+texture = ExtResource( 17 )
+
+[node name="Position2D" type="Position2D" parent="Dispeansers/Dispeanser7/Sprite"]
+position = Vector2( -1.90735e-06, -23.4746 )
+__meta__ = {
+"_gizmo_extents_": 2.0
+}
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64, 674.5 )

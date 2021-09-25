@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=1]
-[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=4]
 [ext_resource path="res://assets/UI/Icons_39.png" type="Texture" id=5]
 [ext_resource path="res://assets/objects/Coin.png" type="Texture" id=6]
@@ -112,6 +111,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MainMenuTouchButton" parent="PauseOverlay" instance=ExtResource( 2 )]
+position = Vector2( 1180, 224 )
+
 [node name="SoundButton" parent="PauseOverlay" instance=ExtResource( 12 )]
 position = Vector2( 1180, 128 )
 
@@ -119,31 +121,7 @@ position = Vector2( 1180, 128 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -126.0
-margin_top = -293.0
+margin_top = -32.0
 margin_right = 126.0
-margin_bottom = -229.0
+margin_bottom = 32.0
 text = "Paused"
-
-[node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -134.5
-margin_top = -80.0
-margin_right = 134.5
-margin_bottom = 80.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MainMenuButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
-margin_right = 269.0
-margin_bottom = 78.0
-text = "Home"
-next_scene_patch = "res://src/Screens/LevelSelectScreen.tscn"
-
-[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 2 )]
-margin_top = 82.0
-margin_right = 269.0
-margin_bottom = 160.0

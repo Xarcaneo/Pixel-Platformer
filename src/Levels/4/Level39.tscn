@@ -11,13 +11,13 @@
 [ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/backgrounds/background2.png" type="Texture" id=10]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/Obstacles/Dispeaner.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Obstacles/MovingBlock.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/Obstacles/Lava.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Obstacles/BreakingPlatform.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Levels/4/Level40.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/Obstacles/Dispeaner.gd" type="Script" id=18]
+[ext_resource path="res://src/Obstacles/Dispeanser.gd" type="Script" id=18]
 [ext_resource path="res://assets/objects/dispeaner.png" type="Texture" id=19]
 [ext_resource path="res://assets/music/Stage 04.ogg" type="AudioStream" id=20]
 
@@ -204,16 +204,19 @@ script = ExtResource( 18 )
 wait_time = 0.6
 fireball_direction = "DOWN"
 
-[node name="Sprite" type="Sprite" parent="Dispeanser/Dispeanser3"]
-position = Vector2( 16, 16 )
-texture = ExtResource( 19 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dispeanser/Dispeanser3"]
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 
-[node name="Position2D" type="Position2D" parent="Dispeanser/Dispeanser3"]
-position = Vector2( 16.0062, 16.0134 )
+[node name="Sprite" type="Sprite" parent="Dispeanser/Dispeanser3"]
+position = Vector2( 16, 16 )
+texture = ExtResource( 19 )
+
+[node name="Position2D" type="Position2D" parent="Dispeanser/Dispeanser3/Sprite"]
+position = Vector2( -1.90735e-06, -23.4746 )
+__meta__ = {
+"_gizmo_extents_": 2.0
+}
 
 [node name="Timer" type="Timer" parent="Dispeanser/Dispeanser3"]
 wait_time = 3.0
@@ -293,3 +296,5 @@ position = Vector2( 256, 704 )
 collision_mask = 2
 
 [connection signal="timeout" from="Dispeanser/Dispeanser3/Timer" to="Dispeanser/Dispeanser3" method="_on_Timer_timeout"]
+
+[editable path="Dispeanser/Dispeanser2"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/backgrounds/background3.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/upheavtt.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="NewsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -800, -128 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background3" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="MainMenuTouchButton" parent="CanvasLayer2" instance=ExtResource( 2 )]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 128.0
+margin_right = -128.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1012.0
+margin_bottom = 683.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1012.0
+margin_bottom = 683.0
+custom_fonts/font = SubResource( 1 )
+text = "Version 1.0
+-Cave theme episode
+
+version 2.0
+-camera improvement
+-better performance 
+-new music and sfx
+-pyramide theme episode
+
+version 2.1
+-fixed problem with run the game 
+on some devices
+-Bug fixes
+-UI changes"

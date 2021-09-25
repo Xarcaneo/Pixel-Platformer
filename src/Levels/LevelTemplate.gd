@@ -2,8 +2,8 @@ extends Node2D
 
 export var music_clip: AudioStream 
 
-onready var coins: Node2D = $Coins
-onready var extra: Area2D = $Extra
+onready var coins: Node2D = get_node("Coins")
+onready var extra: Area2D = get_node("Extra")
 
 func _ready() -> void:
 	if music_clip != null:
