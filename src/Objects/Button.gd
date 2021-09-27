@@ -18,9 +18,10 @@ func _ready():
 
 func _on_Button_body_entered(body):
 	emit_signal("activated")
-	AudioManager.play_sfx(sound_clip, priority_sound)
+	
+	if body.name == "Player":
+		AudioManager.play_sfx(sound_clip, priority_sound)
 
 
 func _on_Button_area_entered(area):
 	emit_signal("activated")
-	AudioManager.play_sfx(sound_clip, priority_sound)

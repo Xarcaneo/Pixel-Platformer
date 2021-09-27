@@ -91,3 +91,12 @@ margin_bottom = 448.0
 level = 49
 next_level_patch = "res://src/Levels/5/Level49.tscn"
 index = 4
+
+[node name="LevelSelectButton10" parent="." instance=ExtResource( 2 )]
+margin_left = 1120.0
+margin_top = 224.0
+margin_right = 1184.0
+margin_bottom = 288.0
+level = 50
+next_level_patch = "res://src/Levels/5/Level50.tscn"
+index = 4

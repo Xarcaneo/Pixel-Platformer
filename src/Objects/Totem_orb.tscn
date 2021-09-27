@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/objects/Coin.png" type="Texture" id=1]
-[ext_resource path="res://src/Objects/Coin.gd" type="Script" id=2]
-[ext_resource path="res://assets/sounds/Coin.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/objects/Totem_orb.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Totem_orb.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4 )
@@ -100,10 +99,9 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[node name="Coin" type="Area2D"]
+[node name="Totem_orb" type="Area2D"]
 collision_layer = 8
 script = ExtResource( 2 )
-sound_clip = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 16, 16 )
@@ -118,4 +116,4 @@ autoplay = "START"
 anims/START = SubResource( 2 )
 anims/fade_out = SubResource( 3 )
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Totem_orb_body_entered"]

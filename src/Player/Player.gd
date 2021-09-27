@@ -11,10 +11,13 @@ var can_move = true
 var last_checkpoint: Area2D = null
 var teleport_id = 0 
 var size
+var totem_orb_picked: = false setget ,totem_orb_picked_get
 
 onready var sprite: Sprite = $Sprite
 onready var checkpoint_tween: Tween = get_node("CheckPointTween")
-	
+onready var destruction_timer: Timer = $Destruction_timer
+onready var label: Label = $Label
+
 func _ready():
 	var current_skin = GameDataManager.load_player_data()
 	sprite.texture = load(GameDataManager.player_skins[current_skin])
@@ -31,6 +34,12 @@ func _physics_process(delta: float) -> void:
 
 	if can_move:
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+		
+	#Destruction timer code
+	if totem_orb_picked:
+		var time_left = destruction_timer.time_left
+		time_left = floor(time_left)
+		label.text = String(time_left)
 
 func _get_direction() -> Vector2:
 	return Vector2(
@@ -83,6 +92,7 @@ func _on_TeleportDetector_area_entered(area):
 		use_portal(area)
 
 func kill():
+	label.visible = false
 	if last_checkpoint != null:
 		animation_player.play("die_animation")
 		yield(animation_player, "animation_finished")
@@ -91,3 +101,20 @@ func kill():
 		animation_player.play("die_animation")
 		yield(animation_player, "animation_finished")
 		get_tree().reload_current_scene()	
+
+func destruction(var destruction_time : int):
+	totem_orb_picked = true
+	label.visible = true
+	destruction_timer.set_wait_time(destruction_time)
+	destruction_timer.start()
+	
+func deactivate():
+	totem_orb_picked = false
+	label.visible = false
+	destruction_timer.stop()
+	
+func totem_orb_picked_get():
+	return totem_orb_picked
+
+func _on_Destruction_timer_timeout():
+	kill()

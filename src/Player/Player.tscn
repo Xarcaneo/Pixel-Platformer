@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/actors/Skin1.png" type="Texture" id=1]
 [ext_resource path="res://src/Particle/ExplosionParticle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/upheavtt.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://src/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://assets/sounds/Jump.ogg" type="AudioStream" id=5]
 
@@ -182,6 +183,10 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16, 12 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 25
+font_data = ExtResource( 3 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 255
 script = ExtResource( 4 )
@@ -238,6 +243,21 @@ shape = SubResource( 7 )
 
 [node name="CheckPointTween" type="Tween" parent="."]
 
+[node name="Destruction_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_top = -32.0
+margin_right = 32.0
+custom_fonts/font = SubResource( 8 )
+text = "5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="DeadlyDetector" to="." method="_on_DeadlyDetector_area_entered"]
 [connection signal="area_entered" from="TeleportDetector" to="." method="_on_TeleportDetector_area_entered"]
 [connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]
+[connection signal="timeout" from="Destruction_timer" to="." method="_on_Destruction_timer_timeout"]
