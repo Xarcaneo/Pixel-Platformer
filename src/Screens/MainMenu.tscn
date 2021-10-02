@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://src/UserInterface/AchievementsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=4]
@@ -9,9 +10,15 @@
 [ext_resource path="res://src/UserInterface/RateButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/RateUs.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/UserInterface/NewsButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/UserInterface/LeaderboardButton.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends \"res://src/Scripts/AudioShared.gd\"
+
+onready var PlayIntegration = get_node(\"/root/PlayIntegration\")
+
+func _ready():
+	PlayIntegration.sign_in()
 "
 
 [node name="MainMenu" type="Control"]
@@ -88,5 +95,11 @@ position = Vector2( 0, 32 )
 
 [node name="NewsButton" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1184, 224 )
+
+[node name="AchievementsButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1184, 320 )
+
+[node name="LeaderboardButton" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1184, 416 )
 
 [connection signal="pressed" from="RateButton" to="RateButton" method="_on_RateButton_pressed"]

@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Player/Actor.gd"
 }, {
+"base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
 "base": "HBoxContainer",
 "class": "ContributorClass",
 "language": "GDScript",
@@ -36,6 +41,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Actor": "",
+"AdMob": "res://admob-lib/icon.png",
 "ContributorClass": "",
 "GistItem": "",
 "InvitationItem": "",
@@ -60,6 +66,8 @@ PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
 IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
 UserData="*res://addons/github-integration/scripts/user_data.gd"
 RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+PlayIntegration="*res://src/Autoload/PlayIntegration.gd"
+AchievementsManager="*res://src/Autoload/AchievementsManager.gd"
 
 [debug]
 
@@ -78,6 +86,10 @@ window/stretch/mode="2d"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+
+[global]
+
+print=false
 
 [input]
 

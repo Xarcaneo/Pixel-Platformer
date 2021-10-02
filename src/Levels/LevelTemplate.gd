@@ -1,7 +1,6 @@
 extends Node2D
 
 export var music_clip: AudioStream 
-
 onready var coins: Node2D = get_node("Coins")
 onready var extra: Area2D = get_node("Extra")
 
@@ -12,7 +11,7 @@ func _ready() -> void:
 		AudioManager.music_player.stream = null
 	
 	restart_data()
-		
+
 func restart_data() -> void:
 	if coins:
 		PlayerData.coins = coins.get_child_count()	

@@ -3,7 +3,7 @@ extends "res://src/Scripts/AudioShared.gd"
 onready var extra: Label = get_node("ExtraPanel/Label")
 onready var skin_containers = get_node("SkinContainers")
 onready var current_skin_panel_sprite = get_node("CurrentSkinPanel/sprite")
-
+onready var admob : AdMob = $AdMob
 var extra_counter : = 0
 	
 func _ready():
@@ -15,6 +15,7 @@ func _ready():
 	extra.text = "%s" % extra_counter
 		
 	unlock_skins()
+	admob.load_banner()
 	
 func _physics_process(delta):
 	current_skin_panel_sprite.texture = load(GameDataManager.player_skins[GameDataManager.current_skin])
@@ -22,4 +23,10 @@ func _physics_process(delta):
 func unlock_skins():
 	for x in skin_containers.get_child_count():
 		skin_containers.get_child(x).unlock(extra_counter)
-	
+
+func _on_AdMob_banner_loaded():
+	admob.show_banner()
+
+
+func _on_ShopScreen_tree_exited():
+	admob.hide_banner()

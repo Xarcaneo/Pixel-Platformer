@@ -1,0 +1,301 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=5]
+[ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=8]
+[ext_resource path="res://src/Objects/Totem_orb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Objects/Teleport.gd" type="Script" id=10]
+[ext_resource path="res://assets/objects/orb.png" type="Texture" id=11]
+[ext_resource path="res://assets/objects/JungleTeleport.png" type="Texture" id=12]
+[ext_resource path="res://assets/objects/PyramidTeleport.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/Teleport.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/objects/CaveTeleport.png" type="Texture" id=15]
+[ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Levels/6/Level55.tscn" type="PackedScene" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Pyramid",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Jungle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 4 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 10, 0, 1, 10, 0, 2, 11, 0, 3, 10, 0, 5, 10, 0, 7, 10, 0, 8, 10, 0, 10, 11, 0, 11, 10, 0, 13, 10, 0, 14, 10, 0, 15, 10, 0, 16, 11, 0, 18, 11, 0, 19, 10, 0, 20, 11, 0, 21, 11, 0, 22, 10, 0, 23, 11, 0, 26, 11, 0, 27, 10, 0, 28, 11, 0, 30, 10, 0, 31, 11, 0, 32, 10, 0, 34, 10, 0, 35, 10, 0, 36, 10, 0, 38, 11, 0, 39, 11, 0, 65536, 11, 0, 65538, 11, 0, 65539, 11, 0, 65540, 11, 0, 65541, 10, 0, 65543, 11, 0, 65544, 11, 0, 65545, 11, 0, 65546, 10, 0, 65548, 10, 0, 65549, 11, 0, 65551, 10, 0, 65552, 11, 0, 65553, 11, 0, 65554, 10, 0, 65555, 11, 0, 65556, 10, 0, 65558, 10, 0, 65560, 10, 0, 65561, 11, 0, 65563, 11, 0, 65564, 10, 0, 65566, 11, 0, 65567, 10, 0, 65569, 11, 0, 65570, 11, 0, 65572, 11, 0, 65573, 11, 0, 65574, 11, 0, 65575, 10, 0, 131072, 10, 0, 131073, 11, 0, 131075, 11, 0, 131084, 10, 0, 131085, 11, 0, 131091, 10, 0, 131093, 11, 0, 131094, 11, 0, 131108, 10, 0, 131109, 10, 0, 131110, 11, 0, 196609, 11, 0, 196610, 11, 0, 196620, 11, 0, 196628, 10, 0, 196629, 10, 0, 196645, 10, 0, 196646, 10, 0, 196647, 11, 0, 262144, 11, 0, 262145, 11, 0, 262156, 11, 0, 262163, 10, 0, 262166, 11, 0, 262183, 11, 0, 327680, 11, 0, 327691, 10, 0, 327692, 11, 0, 327699, 11, 0, 327702, 10, 0, 327718, 11, 0, 327719, 10, 0, 393216, 11, 0, 393217, 10, 0, 393226, 11, 0, 393228, 10, 0, 393235, 11, 0, 393238, 11, 0, 393254, 10, 0, 393255, 11, 0, 458752, 10, 0, 458753, 11, 0, 458762, 11, 0, 458763, 10, 0, 458764, 11, 0, 458790, 10, 0, 524288, 10, 0, 524289, 10, 0, 524299, 10, 0, 524326, 11, 0, 524327, 11, 0, 589824, 11, 0, 589826, 11, 0, 589827, 10, 0, 589828, 10, 0, 589829, 11, 0, 589830, 11, 0, 589834, 11, 0, 589835, 10, 0, 589836, 11, 0, 589862, 11, 0, 655361, 10, 0, 655362, 10, 0, 655363, 11, 0, 655365, 10, 0, 655366, 11, 0, 655370, 10, 0, 655371, 11, 0, 655372, 11, 0, 655398, 11, 0, 720896, 11, 0, 720897, 10, 0, 720899, 11, 0, 720900, 11, 0, 720902, 11, 0, 720906, 11, 0, 720908, 10, 0, 720909, 10, 0, 720910, 11, 0, 720911, 10, 0, 720912, 10, 0, 720913, 10, 0, 720914, 11, 0, 720915, 10, 0, 720916, 11, 0, 720917, 11, 0, 720918, 10, 0, 720919, 10, 0, 720920, 11, 0, 720921, 11, 0, 720922, 10, 0, 720923, 11, 0, 720924, 10, 0, 720925, 10, 0, 720926, 11, 0, 720927, 11, 0, 720928, 11, 0, 720929, 11, 0, 720935, 10, 0, 786432, 11, 0, 786433, 11, 0, 786435, 11, 0, 786436, 10, 0, 786437, 10, 0, 786438, 11, 0, 786442, 10, 0, 786443, 11, 0, 786445, 11, 0, 786447, 11, 0, 786449, 10, 0, 786451, 11, 0, 786453, 10, 0, 786455, 11, 0, 786457, 10, 0, 786459, 11, 0, 786461, 10, 0, 786463, 10, 0, 786465, 10, 0, 786470, 10, 0, 786471, 10, 0, 851968, 11, 0, 851970, 10, 0, 851971, 10, 0, 851972, 11, 0, 851974, 11, 0, 851978, 10, 0, 851979, 11, 0, 851982, 11, 0, 851984, 10, 0, 851986, 11, 0, 851988, 10, 0, 851990, 10, 0, 851992, 10, 0, 851994, 11, 0, 851996, 10, 0, 851998, 11, 0, 852000, 10, 0, 852006, 10, 0, 917504, 11, 0, 917505, 10, 0, 917506, 10, 0, 917508, 10, 0, 917509, 11, 0, 917510, 11, 0, 917514, 11, 0, 917515, 10, 0, 917516, 10, 0, 917542, 10, 0, 917543, 10, 0, 983040, 11, 0, 983041, 11, 0, 983042, 11, 0, 983043, 10, 0, 983045, 11, 0, 983046, 10, 0, 983050, 11, 0, 983052, 10, 0, 983079, 11, 0, 1048576, 10, 0, 1048577, 11, 0, 1048579, 10, 0, 1048582, 11, 0, 1048586, 10, 0, 1048587, 11, 0, 1048588, 11, 0, 1048589, 10, 0, 1048614, 11, 0, 1048615, 10, 0, 1114112, 10, 0, 1114113, 11, 0, 1114114, 10, 0, 1114115, 11, 0, 1114116, 10, 0, 1114117, 10, 0, 1114118, 11, 0, 1114122, 10, 0, 1114124, 11, 0, 1114150, 10, 0, 1179648, 10, 0, 1179651, 10, 0, 1179652, 11, 0, 1179654, 11, 0, 1179658, 10, 0, 1179659, 10, 0, 1179660, 10, 0, 1179661, 10, 0, 1179684, 11, 0, 1179685, 11, 0, 1179686, 11, 0, 1179687, 11, 0, 1245184, 11, 0, 1245185, 11, 0, 1245187, 10, 0, 1245188, 11, 0, 1245190, 10, 0, 1245194, 11, 0, 1245196, 10, 0, 1245222, 11, 0, 1245223, 11, 0, 1310720, 10, 0, 1310721, 10, 0, 1310722, 11, 0, 1310723, 10, 0, 1310724, 11, 0, 1310725, 10, 0, 1310726, 10, 0, 1310732, 11, 0, 1310733, 10, 0, 1310759, 10, 0, 1376256, 11, 0, 1376257, 11, 0, 1376258, 10, 0, 1376260, 11, 0, 1376261, 11, 0, 1376262, 11, 0, 1376268, 11, 0, 1376269, 11, 0, 1376293, 11, 0, 1376295, 11, 0, 1441792, 11, 0, 1441793, 10, 0, 1441796, 11, 0, 1441798, 10, 0, 1441805, 10, 0, 1441828, 10, 0, 1441829, 10, 0, 1441830, 10, 0, 1441831, 11, 0, 1507328, 11, 0, 1507329, 11, 0, 1507330, 10, 0, 1507332, 11, 0, 1507333, 11, 0, 1507334, 11, 0, 1507335, 10, 0, 1507336, 10, 0, 1507337, 11, 0, 1507338, 10, 0, 1507340, 11, 0, 1507341, 10, 0, 1507342, 10, 0, 1507343, 11, 0, 1507344, 10, 0, 1507345, 10, 0, 1507346, 10, 0, 1507347, 10, 0, 1507348, 11, 0, 1507349, 10, 0, 1507350, 11, 0, 1507351, 11, 0, 1507352, 10, 0, 1507353, 10, 0, 1507354, 11, 0, 1507355, 11, 0, 1507356, 11, 0, 1507357, 10, 0, 1507358, 10, 0, 1507359, 10, 0, 1507360, 10, 0, 1507361, 10, 0, 1507362, 10, 0, 1507363, 11, 0, 1507366, 11, 0, 1572864, 10, 0, 1572865, 10, 0, 1572866, 10, 0, 1572867, 10, 0, 1572868, 10, 0, 1572870, 10, 0, 1572871, 10, 0, 1572872, 11, 0, 1572874, 11, 0, 1572875, 11, 0, 1572876, 10, 0, 1572878, 10, 0, 1572879, 10, 0, 1572880, 11, 0, 1572882, 10, 0, 1572884, 10, 0, 1572885, 11, 0, 1572888, 11, 0, 1572889, 10, 0, 1572890, 11, 0, 1572891, 10, 0, 1572893, 10, 0, 1572894, 10, 0, 1572895, 10, 0, 1572898, 11, 0, 1572899, 11, 0, 1572901, 10, 0, 1572902, 10, 0, 1572903, 11, 0 )
+
+[node name="TouchScreenButtons" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 480, 224 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 480, 256 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 480, 288 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 480, 320 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 642.786, 224 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 672, 224 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1056, 320 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1024, 320 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1024, 288 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1056, 288 )
+
+[node name="Extra" parent="." instance=ExtResource( 7 )]
+position = Vector2( 448, 608 )
+
+[node name="Totem orbs" type="Node2D" parent="."]
+
+[node name="Totem_orb" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 256, 416 )
+destruction_time = 1
+
+[node name="Totem_orb2" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 224, 544 )
+destruction_time = 1
+
+[node name="Totem_orb3" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 288, 640 )
+destruction_time = 1
+
+[node name="Totem_orb4" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 288, 480 )
+destruction_time = 1
+
+[node name="Totem_orb5" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 608, 224 )
+destruction_time = 1
+
+[node name="Totem_orb6" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 704, 224 )
+destruction_time = 1
+
+[node name="Totem_orb7" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 320 )
+destruction_time = 1
+
+[node name="Totem_orb8" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 288 )
+destruction_time = 1
+
+[node name="Totem_orb9" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 256 )
+destruction_time = 1
+
+[node name="Totem_orb10" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 224 )
+destruction_time = 1
+
+[node name="Totem_orb11" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 192 )
+destruction_time = 1
+
+[node name="Totem_orb12" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 96 )
+destruction_time = 1
+
+[node name="Totem_orb13" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 800, 64 )
+destruction_time = 1
+
+[node name="Totem_orb14" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 320 )
+destruction_time = 1
+
+[node name="Totem_orb15" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 288 )
+destruction_time = 1
+
+[node name="Totem_orb16" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 256 )
+destruction_time = 1
+
+[node name="Totem_orb17" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 224 )
+destruction_time = 1
+
+[node name="Totem_orb18" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 192 )
+destruction_time = 1
+
+[node name="Totem_orb23" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 192 )
+destruction_time = 1
+
+[node name="Totem_orb24" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 160 )
+destruction_time = 1
+
+[node name="Totem_orb25" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 128 )
+destruction_time = 1
+
+[node name="Totem_orb26" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 96 )
+destruction_time = 1
+
+[node name="Totem_orb27" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 64 )
+destruction_time = 1
+
+[node name="Totem_orb19" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 96 )
+destruction_time = 1
+
+[node name="Totem_orb20" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 64 )
+destruction_time = 1
+
+[node name="Totem_orb21" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 864, 96 )
+destruction_time = 1
+
+[node name="Totem_orb22" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 832, 96 )
+destruction_time = 1
+
+[node name="Totem_orb28" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 992, 224 )
+destruction_time = 1
+
+[node name="Totem_orb30" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 896, 640 )
+destruction_time = 1
+
+[node name="Totem_orb31" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 832, 544 )
+destruction_time = 1
+
+[node name="Totem_orb32" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 736, 672 )
+destruction_time = 1
+
+[node name="Totem_orb33" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 672, 576 )
+destruction_time = 1
+
+[node name="Totem_orb35" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 514, 672 )
+destruction_time = 1
+
+[node name="Totem_orb36" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 608, 672 )
+destruction_time = 1
+
+[node name="Totem_orb37" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 960, 544 )
+destruction_time = 1
+
+[node name="Teleport" type="Node2D" parent="."]
+
+[node name="Teleport" type="Area2D" parent="Teleport" groups=[
+"teleport",
+]]
+position = Vector2( 224, 704 )
+collision_layer = 128
+script = ExtResource( 10 )
+sound_clip = ExtResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="Teleport/Teleport"]
+modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
+position = Vector2( 16, 16 )
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Teleport/Teleport"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+animation = "Jungle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport/Teleport"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="Teleport2" type="Area2D" parent="Teleport" groups=[
+"teleport",
+]]
+position = Vector2( 480, 104 )
+collision_layer = 128
+script = ExtResource( 10 )
+sound_clip = ExtResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="Teleport/Teleport2"]
+modulate = Color( 0.662745, 0.231373, 0.231373, 1 )
+position = Vector2( 16, 16 )
+texture = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Teleport/Teleport2"]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+animation = "Jungle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleport/Teleport2"]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )
+
+[node name="Portal" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1184, 608 )
+current_level = 54
+next_scene = ExtResource( 18 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 256 )
+collision_mask = 2

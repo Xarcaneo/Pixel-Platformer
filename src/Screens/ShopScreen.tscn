@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Screens/ShopScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=6]
 [ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=7]
 [ext_resource path="res://src/UserInterface/SkinSelector.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/AdMob/AdMob.tscn" type="PackedScene" id=9]
 
 [node name="ShopScreen" type="Control"]
 anchor_right = 1.0
@@ -19,6 +20,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 music_clip = ExtResource( 2 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background3" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainMenuTouchButton" parent="." instance=ExtResource( 5 )]
 
@@ -168,13 +180,7 @@ margin_bottom = 0.0
 price = 40
 skin_index = 8
 
-[node name="Background" type="CanvasLayer" parent="."]
-layer = -100
+[node name="AdMob" parent="." instance=ExtResource( 9 )]
 
-[node name="background3" type="TextureRect" parent="Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[connection signal="tree_exited" from="." to="." method="_on_ShopScreen_tree_exited"]
+[connection signal="banner_loaded" from="AdMob" to="." method="_on_AdMob_banner_loaded"]

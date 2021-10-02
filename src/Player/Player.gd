@@ -1,5 +1,7 @@
 extends Actor
 
+signal died
+
 onready var animation_player: = $AnimationPlayer
 
 export var bumper_impulse: = 1500
@@ -22,6 +24,8 @@ func _ready():
 	var current_skin = GameDataManager.load_player_data()
 	sprite.texture = load(GameDataManager.player_skins[current_skin])
 	size = sprite.get_texture().get_size() * sprite.get_scale()
+	
+	connect("died", AchievementsManager, "_player_die_state")
 
 func _on_StompDetector_area_entered(area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, bumper_impulse)
@@ -79,7 +83,8 @@ func use_portal(area):
 					global_position = portal.global_position
 	
 func _on_DeadlyDetector_area_entered(area: Area2D) -> void:
-	kill()
+	if !animation_player.current_animation == "die_animation":
+		kill()
 
 func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vector2:
 	var out: = linear_velocity
@@ -92,6 +97,7 @@ func _on_TeleportDetector_area_entered(area):
 		use_portal(area)
 
 func kill():
+	emit_signal("died")
 	label.visible = false
 	if last_checkpoint != null:
 		animation_player.play("die_animation")

@@ -1,12 +1,17 @@
 tool
 extends Area2D
 
+signal level_completed(level_number)
+
 var is_teleporting = false
 
 onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 export var current_level: int
 export var next_scene: PackedScene
+
+func _ready():
+	connect("level_completed", AchievementsManager, "_level_completed_state")
 
 func _on_body_entered(body: Node) -> void:
 	if PlayerData.coins == 0:
@@ -25,6 +30,9 @@ func teleport() ->void:
 	anim_player.play("fade_in")
 	yield(anim_player,"animation_finished")
 	set_level_data()
+	
+	emit_signal("level_completed", current_level)
+	
 	get_tree().change_scene_to(next_scene)
 	
 func set_level_data() -> void:
@@ -46,4 +54,3 @@ func set_level_data() -> void:
 	"extra_unlocked": extra_unlocked
 	}
 	GameDataManager.save_data()
-	
