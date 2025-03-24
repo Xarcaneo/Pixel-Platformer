@@ -19,8 +19,8 @@ func _physics_process(delta):
 			
 	translate(velocity)
 
-func _on_Dispeanser_block_body_entered(body):
+func _on_Dispeanser_block_body_entered(_body):
 	animation_player.play("fade_out")
 
-func _on_Dispeanser_block_area_entered(area):
+func _on_Dispeanser_block_area_entered(_area):
 	animation_player.play("fade_out")

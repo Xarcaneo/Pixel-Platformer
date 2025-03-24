@@ -1,4 +1,4 @@
-extends TouchScreenButton
+extends Button
 
-func _on_ArchievementsButton_pressed():
-	AchievementsManager.show_achievements()
+func _on_AchievementsButton_pressed():
+	pass

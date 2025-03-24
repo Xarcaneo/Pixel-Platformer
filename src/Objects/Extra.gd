@@ -8,10 +8,9 @@ export  var priority_sound: int
 onready var anim_player: AnimationPlayer = get_node("AnimationPlayer")
 
 func _ready():
-	connect("extra_picked", AchievementsManager, "_extra_picked_state")
+	pass
 
-
-func _on_body_entered(body: Node) -> void :
+func _on_body_entered(_body: Node) -> void :
 	picked()
 
 func picked() -> void :
@@ -19,4 +18,3 @@ func picked() -> void :
 	PlayerData.extra = true
 	AudioManager.play_sfx(sound_clip, priority_sound)
 	anim_player.play("fade_out")
-

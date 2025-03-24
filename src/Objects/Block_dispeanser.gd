@@ -16,7 +16,7 @@ func _ready():
 	timer.set_wait_time(0.1)
 	timer.start()
 	
-func _process(delta):
+func _process(_delta):
 	set_sprite_rotation()
 
 func set_sprite_rotation():

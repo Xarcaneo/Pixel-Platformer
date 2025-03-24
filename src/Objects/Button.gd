@@ -23,5 +23,5 @@ func _on_Button_body_entered(body):
 		AudioManager.play_sfx(sound_clip, priority_sound)
 
 
-func _on_Button_area_entered(area):
+func _on_Button_area_entered(_area):
 	emit_signal("activated")

@@ -32,12 +32,6 @@ ConfigManager="*res://src/Autoload/ConfigManager.gd"
 GameDataManager="*res://src/Autoload/GameDataManager.tscn"
 AudioManager="*res://src/Autoload/AudioManager.tscn"
 PlayerData="*res://src/Autoload/PlayerData.tscn"
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
-PlayIntegration="*res://src/Autoload/PlayIntegration.gd"
-AchievementsManager="*res://src/Autoload/AchievementsManager.gd"
 
 [debug]
 
@@ -60,6 +54,7 @@ enabled=PoolStringArray(  )
 [global]
 
 print=false
+autol=false
 
 [input]
 

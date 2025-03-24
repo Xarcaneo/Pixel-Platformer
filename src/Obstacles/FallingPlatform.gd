@@ -8,10 +8,10 @@ export  var gravity: = 500.0
 var _velocity: = Vector2.ZERO
 var is_falling: = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_falling:
 		_velocity.y = gravity
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	is_falling = true

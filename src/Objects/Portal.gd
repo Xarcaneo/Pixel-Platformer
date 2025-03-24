@@ -11,7 +11,7 @@ export  var current_level: int
 export  var next_scene: PackedScene
 
 func _ready():
-	connect("level_completed", AchievementsManager, "_level_completed_state")
+	pass
 
 func _on_body_entered(body: Node) -> void :
 	if PlayerData.coins == 0:

@@ -1,4 +1,4 @@
-extends TouchScreenButton
+extends Button
 
 func _on_LeaderboardButton_pressed():
-	AchievementsManager.show_leaderboard()
+	pass

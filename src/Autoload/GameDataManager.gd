@@ -39,7 +39,7 @@ func _ready():
 	level_info = load_data()
 	current_h_scroll = load_screen_selector_data()
 	
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func save_data():

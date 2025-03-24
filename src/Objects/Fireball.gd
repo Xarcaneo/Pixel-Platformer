@@ -26,5 +26,5 @@ func _on_Fireball_body_entered(body):
 	queue_free()
 
 
-func _on_Fireball_area_entered(area):
+func _on_Fireball_area_entered(_area):
 	queue_free()

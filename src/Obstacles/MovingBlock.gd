@@ -21,7 +21,7 @@ func _ready():
 	elif dir == "LEFT":
 		sprite.rotation_degrees = - 90
 				
-func _physics_process(delta):
+func _physics_process(_delta):
 	if motion_vector != Vector2():
 		motion_vector *= TILE_SIZE
 		if not test_move(global_transform, motion_vector):
@@ -31,10 +31,10 @@ func _physics_process(delta):
 		
 	motion_vector = Vector2.ZERO
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	moving = false
 	
-func _on_PlayerDetector_body_entered(body):
+func _on_PlayerDetector_body_entered(_body):
 	if moving == false:
 		if dir == "UP":
 			motion_vector += Vector2(0, - 1)

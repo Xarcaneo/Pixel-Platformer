@@ -24,11 +24,11 @@ func _ready():
 	sprite.texture = load(GameDataManager.player_skins[current_skin])
 	size = sprite.get_texture().get_size() * sprite.get_scale()
 	
-func _on_StompDetector_area_entered(area: Area2D) -> void :
+func _on_StompDetector_area_entered(_area: Area2D) -> void :
 	_velocity = calculate_stomp_velocity(_velocity, bumper_impulse)
 	AudioManager.play_sfx(sound_clip, priority_sound)
 	
-func _physics_process(delta: float) -> void :
+func _physics_process(_delta: float) -> void :
 	var direction: = _get_direction()
 	_velocity = bounce(_velocity, speed)
 	_velocity = calculate_move_velocity(_velocity, direction, speed)
@@ -79,7 +79,7 @@ func use_portal(area):
 					area.do_lock()
 					global_position = portal.global_position
 	
-func _on_DeadlyDetector_area_entered(area: Area2D) -> void :
+func _on_DeadlyDetector_area_entered(_area: Area2D) -> void :
 	if not animation_player.current_animation == "die_animation":
 		kill()
 
