@@ -49,18 +49,54 @@ index = 5
 
 [node name="LevelSelectButton5" parent="." instance=ExtResource( 2 )]
 margin_left = 608.0
-margin_top = 160.0
+margin_top = 320.0
 margin_right = 672.0
-margin_bottom = 224.0
+margin_bottom = 384.0
 level = 55
 next_level_patch = "res://src/Levels/6/Level55.tscn"
 index = 5
 
 [node name="LevelSelectButton6" parent="." instance=ExtResource( 2 )]
+margin_left = 608.0
+margin_top = 160.0
+margin_right = 672.0
+margin_bottom = 224.0
+level = 56
+next_level_patch = "res://src/Levels/6/Level56.tscn"
+index = 5
+
+[node name="LevelSelectButton7" parent="." instance=ExtResource( 2 )]
 margin_left = 832.0
 margin_top = 160.0
 margin_right = 896.0
 margin_bottom = 224.0
-level = 56
-next_level_patch = "res://src/Levels/6/Level56.tscn"
+level = 57
+next_level_patch = "res://src/Levels/6/Level57.tscn"
+index = 5
+
+[node name="LevelSelectButton8" parent="." instance=ExtResource( 2 )]
+margin_left = 832.0
+margin_top = 480.0
+margin_right = 896.0
+margin_bottom = 544.0
+level = 58
+next_level_patch = "res://src/Levels/6/Level58.tscn"
+index = 5
+
+[node name="LevelSelectButton9" parent="." instance=ExtResource( 2 )]
+margin_left = 1056.0
+margin_top = 480.0
+margin_right = 1120.0
+margin_bottom = 544.0
+level = 59
+next_level_patch = "res://src/Levels/6/Level59.tscn"
+index = 5
+
+[node name="LevelSelectButton10" parent="." instance=ExtResource( 2 )]
+margin_left = 1056.0
+margin_top = 320.0
+margin_right = 1120.0
+margin_bottom = 384.0
+level = 60
+next_level_patch = "res://src/Levels/6/Level60.tscn"
 index = 5

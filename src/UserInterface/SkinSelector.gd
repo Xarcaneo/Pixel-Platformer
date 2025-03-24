@@ -1,7 +1,7 @@
 extends Control
 
-export var price: = 0
-export var skin_index: = 0
+export  var price: = 0
+export  var skin_index: = 0
 
 onready var label = $Label
 onready var button = $Button
@@ -15,7 +15,7 @@ func _ready():
 	if GameDataManager.player_skins.size() >= skin_index:
 		skin.texture = load(GameDataManager.player_skins[skin_index])
 		
-func unlock( var extra_counter : int ):
+func unlock( var extra_counter: int):
 	if int(label.text) <= extra_counter:
 		button.disabled = false
 

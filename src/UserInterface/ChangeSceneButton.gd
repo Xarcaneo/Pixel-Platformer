@@ -1,7 +1,7 @@
-tool
+tool 
 extends Button
 
-export(String, FILE) var next_scene_patch: = ""
+export (String, FILE) var next_scene_patch: = ""
 
 func _on_button_up():
 	get_tree().paused = false

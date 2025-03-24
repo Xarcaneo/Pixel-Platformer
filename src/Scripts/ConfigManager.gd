@@ -19,7 +19,7 @@ func save_config():
 func load_config():
 	var config = ConfigFile.new()
 	var default_options = {
-			"sound": true,
+			"sound": true, 
 			"music": true
 			}
 	var err = config.load(path)

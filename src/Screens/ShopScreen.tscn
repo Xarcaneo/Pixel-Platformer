@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=6]
 [ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=7]
 [ext_resource path="res://src/UserInterface/SkinSelector.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/AdMob/AdMob.tscn" type="PackedScene" id=9]
 
 [node name="ShopScreen" type="Control"]
 anchor_right = 1.0
@@ -180,7 +179,35 @@ margin_bottom = 0.0
 price = 40
 skin_index = 8
 
-[node name="AdMob" parent="." instance=ExtResource( 9 )]
+[node name="SkinSelector10" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_top = 128.0
+margin_right = 0.0
+margin_bottom = 128.0
+price = 45
+skin_index = 9
+
+[node name="SkinSelector11" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 128.0
+price = 50
+skin_index = 10
+
+[node name="SkinSelector12" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 256.0
+margin_bottom = 128.0
+price = 55
+skin_index = 11
+
+[node name="SkinSelector13" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 384.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 128.0
+price = 60
+skin_index = 12
 
 [connection signal="tree_exited" from="." to="." method="_on_ShopScreen_tree_exited"]
-[connection signal="banner_loaded" from="AdMob" to="." method="_on_AdMob_banner_loaded"]

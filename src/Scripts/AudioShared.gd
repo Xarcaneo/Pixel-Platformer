@@ -1,6 +1,6 @@
 extends Control
 
-export var music_clip: AudioStream 
+export  var music_clip: AudioStream
 
-func _ready() -> void:
+func _ready() -> void :
 	AudioManager.play_music(music_clip)

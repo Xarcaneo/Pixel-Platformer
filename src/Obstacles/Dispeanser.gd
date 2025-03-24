@@ -1,13 +1,13 @@
 extends StaticBody2D
 
-export(float) var wait_time: = 2.0
-export(String, "UP", "DOWN", "RIGHT", "LEFT") var fireball_direction: = "UP"
-export var fireball_speed: = 300
+export (float) var wait_time: = 2.0
+export (String, "UP", "DOWN", "RIGHT", "LEFT") var fireball_direction: = "UP"
+export  var fireball_speed: = 300
 
-const FIREBALL =  preload("res://src/Objects/Fireball.tscn")
+const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 
 onready var sprite: Sprite = $Sprite
-onready var position2D: Position2D = $Sprite/Position2D
+onready var position2D: Position2D = $Sprite / Position2D
 
 onready var timer = get_node("Timer")
 
@@ -34,4 +34,4 @@ func set_sprite_rotation():
 	elif fireball_direction == "DOWN":
 		sprite.rotation_degrees = 180
 	elif fireball_direction == "LEFT":
-		sprite.rotation_degrees = -90
+		sprite.rotation_degrees = - 90

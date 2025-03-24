@@ -12,7 +12,7 @@
 [ext_resource path="res://src/Objects/Button.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/music/Stage 04.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/music/Stage 05.ogg" type="AudioStream" id=13]
 [ext_resource path="res://src/Obstacles/FallingPlatform.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=16]

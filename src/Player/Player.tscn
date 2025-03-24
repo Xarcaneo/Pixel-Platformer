@@ -73,7 +73,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 255 ]
+"values": [ 15359 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath(".:can_move")
@@ -188,14 +188,12 @@ size = 25
 font_data = ExtResource( 3 )
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 0
-collision_mask = 0
+collision_mask = 15359
 script = ExtResource( 4 )
 sound_clip = ExtResource( 5 )
 priority_sound = 1
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 position = Vector2( 16, 16 )
 texture = ExtResource( 1 )
 

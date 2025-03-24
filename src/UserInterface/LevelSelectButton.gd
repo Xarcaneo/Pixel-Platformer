@@ -1,14 +1,14 @@
-tool
+tool 
 extends TextureButton
 
-#Level Stuff
+
 export (int) var level
-export(String, FILE) var next_level_patch
+export (String, FILE) var next_level_patch
 export (bool) var enabled
 export (bool) var score_goal_met
-export var index: = 0
+export  var index: = 0
 
-#Texture Stuff
+
 export (Texture) var blocked_texture
 export (Texture) var open_texture
 export (Texture) var goal_met
@@ -21,7 +21,7 @@ onready var extra_sprite: Sprite = $Extra_sprite
 func _ready():
 	if GameDataManager.level_info.has(level):
 		enabled = GameDataManager.level_info[level]["unlocked"]
-		score_goal_met =  GameDataManager.level_info[level]["extra_unlocked"]
+		score_goal_met = GameDataManager.level_info[level]["extra_unlocked"]
 	else:
 		enabled = false
 	setup()
@@ -42,14 +42,14 @@ func setup():
 	else:
 		extra_sprite.texture = goal_not_met
 
-func _pressed() -> void:
+func _pressed() -> void :
 	if enabled:
 		update_camera_position()
 		anim_player.play("fade_in")
-		yield(anim_player,"animation_finished")
+		yield(anim_player, "animation_finished")
 		get_tree().change_scene(next_level_patch)
 
-func update_camera_position() -> void:
+func update_camera_position() -> void :
 		GameDataManager.current_h_scroll = rect_position.x + (GameDataManager.SCREEN_WIDTH * index)
 		GameDataManager.save_screen_selector_data()
 

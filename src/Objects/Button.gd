@@ -1,8 +1,8 @@
 extends Area2D
 
-export(int) var link_code: int = 0 
-export var sound_clip: AudioStream 
-export var priority_sound: int
+export (int) var link_code: int = 0
+export  var sound_clip: AudioStream
+export  var priority_sound: int
 
 signal activated()
 

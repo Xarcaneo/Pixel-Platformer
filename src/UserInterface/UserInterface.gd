@@ -9,22 +9,22 @@ onready var extra_cross_sign: Sprite = get_node("ExtraPanel/CrossSign_Sprite")
 
 var paused: = false setget set_paused
 
-func _ready() -> void:
+func _ready() -> void :
 	PlayerData.connect("coins_updated", self, "update_interface")
 	PlayerData.connect("extra_updated", self, "update_interface")
 	update_interface()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void :
 	if event.is_action_pressed("pause"):
 		self.paused = not paused
 		scene_tree.set_input_as_handled()
 		
-func set_paused(value: bool) -> void:
+func set_paused(value: bool) -> void :
 	paused = value
 	scene_tree.paused = value
 	pause_overlay.visible = value
 
-func update_interface() -> void:
+func update_interface() -> void :
 	coins.text = "%s" % PlayerData.coins
 	
 	if PlayerData.coins == 0:

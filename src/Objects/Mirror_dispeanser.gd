@@ -1,15 +1,15 @@
 extends Area2D
 
-export(int) var link_code: int = 0 
-export(String, "UP", "DOWN", "RIGHT", "LEFT") var fireball_direction: = "UP"
+export (int) var link_code: int = 0
+export (String, "UP", "DOWN", "RIGHT", "LEFT") var fireball_direction: = "UP"
 
 var can_shoot: = true
 
 onready var sprite: Sprite = $Sprite
-onready var position2D: Position2D = $Sprite/Position2D
+onready var position2D: Position2D = $Sprite / Position2D
 onready var timer = get_node("Timer")
 
-const FIREBALL =  preload("res://src/Objects/Fireball.tscn")
+const FIREBALL = preload("res://src/Objects/Fireball.tscn")
 
 func _ready():
 	set_sprite_rotation()
@@ -27,7 +27,7 @@ func set_sprite_rotation():
 	elif fireball_direction == "DOWN":
 		sprite.rotation_degrees = 180
 	elif fireball_direction == "LEFT":
-		sprite.rotation_degrees = -90
+		sprite.rotation_degrees = - 90
 
 
 func _change_state():
@@ -43,7 +43,7 @@ func _change_state():
 func _on_Mirror_dispeanser_area_entered(area):
 	shoot(area.speed)
 	
-func shoot( var speed ):
+func shoot( var speed):
 	if can_shoot:
 		var fireball = FIREBALL.instance()
 		get_parent().call_deferred("add_child", fireball)

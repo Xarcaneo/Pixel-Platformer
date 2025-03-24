@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
@@ -20,9 +20,11 @@
 [ext_resource path="res://src/Objects/Fireball.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Levels/5/Level50.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/music/Stage 05.ogg" type="AudioStream" id=21]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 5 )
+music_clip = ExtResource( 21 )
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -100
@@ -144,16 +146,13 @@ link_code = 4
 
 [node name="Mirror_dispeanser2" parent="Mirror Dispeansers" instance=ExtResource( 11 )]
 position = Vector2( 800, 448 )
-link_code = 4
 
 [node name="Mirror_dispeanser3" parent="Mirror Dispeansers" instance=ExtResource( 11 )]
 position = Vector2( 1024, 448 )
-link_code = 4
 fireball_direction = "LEFT"
 
 [node name="Mirror_dispeanser4" parent="Mirror Dispeansers" instance=ExtResource( 11 )]
 position = Vector2( 1024, 224 )
-link_code = 4
 fireball_direction = "DOWN"
 
 [node name="Mirror_dispeanser6" parent="Mirror Dispeansers" instance=ExtResource( 11 )]

@@ -91,36 +91,6 @@ position = Vector2( 766, 512 )
 [node name="Extra" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1120, 448 )
 
-[node name="Dispeanser" type="Node2D" parent="."]
-
-[node name="Dispeaner" parent="Dispeanser" instance=ExtResource( 9 )]
-position = Vector2( 1152, 576 )
-wait_time = 0.2
-fireball_direction = "LEFT"
-
-[node name="Dispeaner2" parent="Dispeanser" instance=ExtResource( 9 )]
-position = Vector2( 1152, 608 )
-wait_time = 0.2
-fireball_direction = "LEFT"
-
-[node name="MovingBlocks" type="Node2D" parent="."]
-
-[node name="MovingBlock" parent="MovingBlocks" instance=ExtResource( 10 )]
-position = Vector2( 192, 544 )
-dir = "DOWN"
-
-[node name="MovingBlock2" parent="MovingBlocks" instance=ExtResource( 10 )]
-position = Vector2( 288, 544 )
-dir = "RIGHT"
-
-[node name="MovingBlock3" parent="MovingBlocks" instance=ExtResource( 10 )]
-position = Vector2( 864, 416 )
-
-[node name="FallingPlatform" type="Node2D" parent="."]
-
-[node name="FallingPlatform" parent="FallingPlatform" instance=ExtResource( 11 )]
-position = Vector2( 192, 288 )
-
 [node name="Spikes" type="Node2D" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource( 12 )]
@@ -170,6 +140,39 @@ position = Vector2( 288, 256 )
 
 [node name="Spike16" parent="Spikes" instance=ExtResource( 12 )]
 position = Vector2( 256, 256 )
+
+[node name="Spike17" parent="Spikes" instance=ExtResource( 12 )]
+position = Vector2( 864, 52 )
+
+[node name="Dispeanser" type="Node2D" parent="."]
+
+[node name="Dispeaner" parent="Dispeanser" instance=ExtResource( 9 )]
+position = Vector2( 1152, 576 )
+wait_time = 0.2
+fireball_direction = "LEFT"
+
+[node name="Dispeaner2" parent="Dispeanser" instance=ExtResource( 9 )]
+position = Vector2( 1152, 608 )
+wait_time = 0.2
+fireball_direction = "LEFT"
+
+[node name="MovingBlocks" type="Node2D" parent="."]
+
+[node name="MovingBlock" parent="MovingBlocks" instance=ExtResource( 10 )]
+position = Vector2( 192, 544 )
+dir = "DOWN"
+
+[node name="MovingBlock2" parent="MovingBlocks" instance=ExtResource( 10 )]
+position = Vector2( 288, 544 )
+dir = "RIGHT"
+
+[node name="MovingBlock3" parent="MovingBlocks" instance=ExtResource( 10 )]
+position = Vector2( 864, 416 )
+
+[node name="FallingPlatform" type="Node2D" parent="."]
+
+[node name="FallingPlatform" parent="FallingPlatform" instance=ExtResource( 11 )]
+position = Vector2( 192, 288 )
 
 [node name="Breaking Platforms" type="Node2D" parent="."]
 

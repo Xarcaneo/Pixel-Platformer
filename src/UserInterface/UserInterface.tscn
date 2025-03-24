@@ -113,6 +113,7 @@ __meta__ = {
 
 [node name="MainMenuTouchButton" parent="PauseOverlay" instance=ExtResource( 2 )]
 position = Vector2( 1180, 224 )
+next_scene_patch = "res://src/Screens/LevelSelectScreen.tscn"
 
 [node name="SoundButton" parent="PauseOverlay" instance=ExtResource( 12 )]
 position = Vector2( 1180, 128 )

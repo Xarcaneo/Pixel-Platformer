@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 const FLOOR_NORMAL: = Vector2.UP
 
-export var speed: = Vector2(0, 1000.0)
-export var gravity: = 500.0
+export  var speed: = Vector2(0, 1000.0)
+export  var gravity: = 500.0
 
 var _velocity: = Vector2.ZERO
 var is_falling: = false

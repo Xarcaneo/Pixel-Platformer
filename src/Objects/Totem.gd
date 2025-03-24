@@ -2,11 +2,13 @@ extends StaticBody2D
 
 signal activated()
 
-export(int) var link_code: int = 0 
+export  var sound_clip: AudioStream
+export  var priority_sound: int
+export (int) var link_code: int = 0
 
 var activated: = false
 
-onready var animation_player : AnimationPlayer = $AnimationPlayer
+onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	if link_code != 0:
@@ -15,7 +17,8 @@ func _ready():
 				var __ = connect("activated", door, "_change_state")
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player" and !activated and body.totem_orb_picked_get():
+	if body.name == "Player" and not activated and body.totem_orb_picked_get():
+		AudioManager.play_sfx(sound_clip, priority_sound)
 		emit_signal("activated")
 		activated = true
 		animation_player.play("activated")

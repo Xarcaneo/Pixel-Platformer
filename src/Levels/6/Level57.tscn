@@ -1,0 +1,445 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=5]
+[ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=8]
+[ext_resource path="res://src/Objects/Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Block_dispeanser.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Obstacles/Water.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Obstacles/Spike.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Levels/6/Level58.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/music/Stage 06.ogg" type="AudioStream" id=18]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 5 )
+music_clip = ExtResource( 18 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 4 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 10, 0, 1, 10, 0, 3, 10, 0, 4, 11, 0, 5, 11, 0, 6, 10, 0, 7, 10, 0, 9, 10, 0, 10, 10, 0, 11, 10, 0, 13, 11, 0, 14, 10, 0, 15, 11, 0, 17, 11, 0, 18, 11, 0, 19, 11, 0, 21, 11, 0, 22, 10, 0, 23, 10, 0, 24, 11, 0, 26, 11, 0, 27, 10, 0, 28, 11, 0, 29, 10, 0, 31, 11, 0, 33, 10, 0, 35, 10, 0, 36, 11, 0, 37, 10, 0, 38, 11, 0, 39, 10, 0, 65536, 10, 0, 65538, 10, 0, 65539, 11, 0, 65540, 10, 0, 65542, 10, 0, 65543, 11, 0, 65544, 10, 0, 65546, 10, 0, 65547, 11, 0, 65548, 11, 0, 65549, 11, 0, 65551, 10, 0, 65552, 10, 0, 65553, 10, 0, 65555, 10, 0, 65556, 11, 0, 65557, 11, 0, 65559, 11, 0, 65560, 10, 0, 65561, 11, 0, 65562, 11, 0, 65563, 11, 0, 65565, 11, 0, 65566, 11, 0, 65568, 11, 0, 65569, 10, 0, 65570, 10, 0, 65571, 11, 0, 65573, 11, 0, 65575, 11, 0, 131072, 11, 0, 131073, 11, 0, 131107, 10, 0, 131110, 10, 0, 131111, 10, 0, 196608, 11, 0, 196609, 10, 0, 196644, 11, 0, 196645, 10, 0, 196646, 11, 0, 262144, 10, 0, 262181, 10, 0, 262183, 11, 0, 327680, 10, 0, 327681, 10, 0, 327717, 10, 0, 327718, 11, 0, 327719, 11, 0, 393217, 10, 0, 393253, 10, 0, 393255, 11, 0, 458752, 11, 0, 458753, 10, 0, 458789, 10, 0, 458790, 11, 0, 524289, 11, 0, 524325, 10, 0, 589824, 11, 0, 589826, 11, 0, 589827, 11, 0, 589828, 10, 0, 589829, 11, 0, 589832, 11, 0, 589833, 11, 0, 589863, 11, 0, 655360, 10, 0, 655361, 11, 0, 655364, 10, 0, 655368, 10, 0, 655397, 10, 0, 655398, 11, 0, 720896, 11, 0, 720898, 11, 0, 720899, 11, 0, 720905, 11, 0, 720933, 10, 0, 720935, 11, 0, 786432, 10, 0, 786433, 10, 0, 786434, 10, 0, 786440, 10, 0, 786441, 11, 0, 786442, 11, 0, 786444, 10, 0, 786445, 10, 0, 786447, 10, 0, 786449, 10, 0, 786450, 11, 0, 786451, 11, 0, 786453, 11, 0, 786454, 11, 0, 786455, 11, 0, 786456, 11, 0, 786458, 11, 0, 786459, 10, 0, 786460, 10, 0, 786461, 10, 0, 786463, 11, 0, 786464, 10, 0, 786465, 11, 0, 786467, 10, 0, 786468, 10, 0, 786469, 11, 0, 786471, 11, 0, 851968, 10, 0, 851969, 11, 0, 851976, 10, 0, 851978, 10, 0, 851979, 11, 0, 851982, 10, 0, 851983, 11, 0, 851984, 10, 0, 851985, 10, 0, 851988, 10, 0, 851989, 11, 0, 851990, 10, 0, 851993, 10, 0, 851994, 10, 0, 851995, 11, 0, 851996, 10, 0, 851999, 10, 0, 852001, 10, 0, 852002, 10, 0, 852003, 10, 0, 852005, 11, 0, 852006, 11, 0, 917505, 10, 0, 917541, 10, 0, 917542, 10, 0, 983040, 10, 0, 983041, 11, 0, 983077, 10, 0, 983079, 11, 0, 1048576, 10, 0, 1048613, 11, 0, 1048615, 10, 0, 1114113, 10, 0, 1114115, 11, 0, 1114149, 10, 0, 1114150, 10, 0, 1179648, 10, 0, 1179649, 10, 0, 1179650, 10, 0, 1179651, 10, 0, 1179652, 11, 0, 1179653, 10, 0, 1179685, 11, 0, 1179687, 10, 0, 1245184, 11, 0, 1245221, 10, 0, 1245222, 10, 0, 1245223, 11, 0, 1310720, 10, 0, 1310721, 11, 0, 1310757, 11, 0, 1310759, 10, 0, 1376257, 11, 0, 1376292, 10, 0, 1376293, 10, 0, 1376294, 10, 0, 1441792, 11, 0, 1441794, 11, 0, 1441795, 10, 0, 1441796, 11, 0, 1441797, 10, 0, 1441798, 10, 0, 1441799, 10, 0, 1441800, 10, 0, 1441801, 10, 0, 1441802, 11, 0, 1441803, 10, 0, 1441804, 10, 0, 1441805, 10, 0, 1441806, 10, 0, 1441807, 11, 0, 1441808, 11, 0, 1441809, 10, 0, 1441810, 10, 0, 1441811, 11, 0, 1441812, 10, 0, 1441813, 10, 0, 1441814, 10, 0, 1441815, 10, 0, 1441816, 10, 0, 1441817, 10, 0, 1441818, 10, 0, 1441819, 10, 0, 1441820, 10, 0, 1441821, 10, 0, 1441822, 10, 0, 1441823, 11, 0, 1441824, 10, 0, 1441825, 10, 0, 1441826, 11, 0, 1441827, 11, 0, 1441828, 10, 0, 1441829, 11, 0, 1441831, 11, 0, 1507328, 10, 0, 1507330, 10, 0, 1507331, 10, 0, 1507333, 10, 0, 1507334, 11, 0, 1507336, 11, 0, 1507337, 10, 0, 1507340, 10, 0, 1507341, 11, 0, 1507343, 10, 0, 1507345, 11, 0, 1507346, 11, 0, 1507348, 11, 0, 1507349, 10, 0, 1507351, 11, 0, 1507353, 11, 0, 1507354, 11, 0, 1507355, 11, 0, 1507356, 11, 0, 1507358, 11, 0, 1507359, 11, 0, 1507361, 11, 0, 1507362, 11, 0, 1507363, 10, 0, 1507365, 10, 0, 1507366, 10, 0, 1572864, 10, 0, 1572865, 10, 0, 1572866, 10, 0, 1572868, 11, 0, 1572869, 11, 0, 1572870, 10, 0, 1572871, 11, 0, 1572872, 11, 0, 1572874, 10, 0, 1572875, 11, 0, 1572876, 10, 0, 1572877, 11, 0, 1572879, 10, 0, 1572880, 10, 0, 1572881, 10, 0, 1572883, 10, 0, 1572884, 11, 0, 1572885, 10, 0, 1572887, 11, 0, 1572888, 10, 0, 1572889, 10, 0, 1572890, 11, 0, 1572892, 11, 0, 1572893, 11, 0, 1572894, 10, 0, 1572896, 11, 0, 1572897, 10, 0, 1572899, 10, 0, 1572900, 11, 0, 1572901, 11, 0, 1572903, 10, 0 )
+
+[node name="TouchScreenButtons" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 864, 192 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 514, 672 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 514, 640 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 512, 608 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 706, 672 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 706, 640 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 704, 608 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 482, 672 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 482, 640 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 480, 608 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 674, 672 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 674, 640 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 672, 608 )
+
+[node name="Coin14" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 866, 672 )
+
+[node name="Coin15" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 866, 640 )
+
+[node name="Coin16" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 864, 608 )
+
+[node name="Coin17" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 834, 672 )
+
+[node name="Coin18" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 834, 640 )
+
+[node name="Coin19" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 832, 608 )
+
+[node name="Coin20" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 898, 672 )
+
+[node name="Coin21" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 898, 640 )
+
+[node name="Coin22" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 896, 608 )
+
+[node name="Coin23" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 546, 672 )
+
+[node name="Coin24" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 546, 640 )
+
+[node name="Coin25" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 544, 608 )
+
+[node name="Extra" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1088, 192 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 416, 672 )
+
+[node name="Spike2" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 384, 672 )
+
+[node name="Spike3" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 448, 672 )
+
+[node name="Spike4" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 608, 672 )
+
+[node name="Spike5" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 576, 672 )
+
+[node name="Spike6" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 640, 672 )
+
+[node name="Spike7" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 768, 672 )
+
+[node name="Spike8" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 736, 672 )
+
+[node name="Spike9" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 800, 672 )
+
+[node name="Spike10" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 960, 672 )
+
+[node name="Spike11" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 928, 672 )
+
+[node name="Spike12" parent="Spikes" instance=ExtResource( 14 )]
+position = Vector2( 992, 672 )
+
+[node name="Dispeansers" type="Node2D" parent="."]
+
+[node name="Dispeanser" parent="Dispeansers" instance=ExtResource( 10 )]
+position = Vector2( 1216, 288.525 )
+wait_time = 0.5
+fireball_direction = "LEFT"
+
+[node name="Dispeanser2" parent="Dispeansers" instance=ExtResource( 10 )]
+position = Vector2( 384, 416 )
+wait_time = 0.3
+fireball_direction = "RIGHT"
+
+[node name="Dispeanser3" parent="Dispeansers" instance=ExtResource( 10 )]
+position = Vector2( 576, 416 )
+wait_time = 0.3
+fireball_direction = "RIGHT"
+
+[node name="Dispeanser4" parent="Dispeansers" instance=ExtResource( 10 )]
+position = Vector2( 736, 416 )
+wait_time = 0.3
+fireball_direction = "RIGHT"
+
+[node name="Dispeanser5" parent="Dispeansers" instance=ExtResource( 10 )]
+position = Vector2( 928, 416 )
+wait_time = 0.3
+fireball_direction = "RIGHT"
+
+[node name="Block dispeansers" type="Node2D" parent="."]
+
+[node name="Block_dispeanser" parent="Block dispeansers" instance=ExtResource( 11 )]
+position = Vector2( 1184, 288 )
+link_code = 1
+
+[node name="Block_dispeanser2" parent="Block dispeansers" instance=ExtResource( 11 )]
+position = Vector2( 416, 416 )
+block_direction = "DOWN"
+
+[node name="Block_dispeanser3" parent="Block dispeansers" instance=ExtResource( 11 )]
+position = Vector2( 608, 416 )
+block_direction = "DOWN"
+
+[node name="Block_dispeanser4" parent="Block dispeansers" instance=ExtResource( 11 )]
+position = Vector2( 768, 416 )
+block_direction = "DOWN"
+
+[node name="Block_dispeanser5" parent="Block dispeansers" instance=ExtResource( 11 )]
+position = Vector2( 960, 416 )
+block_direction = "DOWN"
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource( 9 )]
+position = Vector2( 160, 256 )
+link_code = 1
+
+[node name="Button2" parent="Buttons" instance=ExtResource( 9 )]
+position = Vector2( 1088, 672 )
+link_code = 2
+
+[node name="Water" type="Node2D" parent="."]
+
+[node name="Water" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 288, 320 )
+
+[node name="Water3" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 320, 320 )
+
+[node name="Water4" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 320, 352 )
+
+[node name="Water6" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 352, 320 )
+
+[node name="Water7" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 352, 352 )
+
+[node name="Water8" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 352, 384 )
+
+[node name="Water10" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 384, 320 )
+
+[node name="Water11" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 384, 352 )
+
+[node name="Water13" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 416, 320 )
+
+[node name="Water14" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 416, 352 )
+
+[node name="Water16" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 448, 320 )
+
+[node name="Water17" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 448, 352 )
+
+[node name="Water18" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 448, 384 )
+
+[node name="Water20" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 480, 320 )
+
+[node name="Water21" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 544, 320 )
+
+[node name="Water22" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 576, 320 )
+
+[node name="Water23" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 480, 352 )
+
+[node name="Water24" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 512, 320 )
+
+[node name="Water25" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 608, 320 )
+
+[node name="Water26" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 640, 320 )
+
+[node name="Water27" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 672, 320 )
+
+[node name="Water28" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 704, 320 )
+
+[node name="Water29" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 736, 320 )
+
+[node name="Water30" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 768, 320 )
+
+[node name="Water31" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 800, 320 )
+
+[node name="Water32" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 832, 320 )
+
+[node name="Water33" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 864, 320 )
+
+[node name="Water34" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 896, 320 )
+
+[node name="Water35" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 928, 320 )
+
+[node name="Water36" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 960, 320 )
+
+[node name="Water37" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 992, 320 )
+
+[node name="Water38" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1024, 320 )
+
+[node name="Water39" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1056, 320 )
+
+[node name="Water40" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1088, 320 )
+
+[node name="Water41" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1120, 320 )
+
+[node name="Water42" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1152, 320 )
+
+[node name="Water43" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 512, 352 )
+
+[node name="Water44" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 608, 352 )
+
+[node name="Water45" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 640, 352 )
+
+[node name="Water46" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 672, 352 )
+
+[node name="Water47" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 704, 352 )
+
+[node name="Water48" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 736, 352 )
+
+[node name="Water49" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 768, 352 )
+
+[node name="Water50" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 800, 352 )
+
+[node name="Water51" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 832, 352 )
+
+[node name="Water52" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 864, 352 )
+
+[node name="Water53" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 896, 352 )
+
+[node name="Water54" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 928, 352 )
+
+[node name="Water55" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 960, 352 )
+
+[node name="Water56" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 992, 352 )
+
+[node name="Water57" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1024, 352 )
+
+[node name="Water58" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1056, 352 )
+
+[node name="Water59" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1088, 352 )
+
+[node name="Water60" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1120, 352 )
+
+[node name="Water61" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1152, 352 )
+
+[node name="Water62" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 544, 352 )
+
+[node name="Water63" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 576, 352 )
+
+[node name="Water64" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 512, 384 )
+
+[node name="Water65" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 512, 384 )
+
+[node name="Water66" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 512, 384 )
+
+[node name="Water67" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 640, 384 )
+
+[node name="Water68" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 640, 384 )
+
+[node name="Water69" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 800, 384 )
+
+[node name="Water70" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 960, 384 )
+
+[node name="Water71" parent="Water" instance=ExtResource( 13 )]
+position = Vector2( 1088, 384 )
+
+[node name="Portal" parent="." instance=ExtResource( 15 )]
+position = Vector2( 96, 640 )
+current_level = 57
+next_scene = ExtResource( 17 )
+
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Door" parent="Door" instance=ExtResource( 16 )]
+position = Vector2( 160, 608 )
+link_code = 2
+
+[node name="Door2" parent="Door" instance=ExtResource( 16 )]
+position = Vector2( 160, 640 )
+link_code = 2
+
+[node name="Door3" parent="Door" instance=ExtResource( 16 )]
+position = Vector2( 160, 672 )
+link_code = 2
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 256 )
+collision_mask = 2

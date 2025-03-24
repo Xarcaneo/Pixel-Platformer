@@ -13,39 +13,9 @@ _global_script_classes=[ {
 "class": "Actor",
 "language": "GDScript",
 "path": "res://src/Player/Actor.gd"
-}, {
-"base": "Node",
-"class": "AdMob",
-"language": "GDScript",
-"path": "res://admob-lib/admob.gd"
-}, {
-"base": "HBoxContainer",
-"class": "ContributorClass",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/ContributorClass.gd"
-}, {
-"base": "PanelContainer",
-"class": "GistItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/GistItem.gd"
-}, {
-"base": "HBoxContainer",
-"class": "InvitationItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/InvitationItem.gd"
-}, {
-"base": "PanelContainer",
-"class": "RepositoryItem",
-"language": "GDScript",
-"path": "res://addons/github-integration/scripts/RepositoryItem.gd"
 } ]
 _global_script_class_icons={
-"Actor": "",
-"AdMob": "res://admob-lib/icon.png",
-"ContributorClass": "",
-"GistItem": "",
-"InvitationItem": "",
-"RepositoryItem": ""
+"Actor": ""
 }
 
 [application]
@@ -59,7 +29,7 @@ config/icon="res://assets/UI/Icon.png"
 [autoload]
 
 ConfigManager="*res://src/Autoload/ConfigManager.gd"
-GameDataManager="*res://src/Autoload/GameDataManager.gd"
+GameDataManager="*res://src/Autoload/GameDataManager.tscn"
 AudioManager="*res://src/Autoload/AudioManager.tscn"
 PlayerData="*res://src/Autoload/PlayerData.tscn"
 PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
@@ -85,7 +55,7 @@ window/stretch/mode="2d"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 
@@ -95,12 +65,12 @@ print=false
 
 ui_touch={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 pause={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
@@ -123,6 +93,8 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_11="moving block"
 2d_physics/layer_12="dispeanser"
 2d_physics/layer_13="totem"
+2d_physics/layer_14="dispeanser block"
+2d_physics/layer_15="dispeanser block area"
 
 [physics]
 
