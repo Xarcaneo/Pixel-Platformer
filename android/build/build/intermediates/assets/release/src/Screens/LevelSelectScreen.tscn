@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Screens/LevelSelectScreen.gd" type="Script" id=3]
+[ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=5]
+[ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop5.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/LevelBackdrops/LevelBackdrop6.tscn" type="PackedScene" id=10]
+
+[node name="LevelSelectScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+music_clip = ExtResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+margin_right = 1280.0
+margin_bottom = 800.0
+scroll_vertical_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer"]
+margin_right = 7680.0
+margin_bottom = 800.0
+custom_constants/separation = 0
+
+[node name="LevelBackdrop1" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop2" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1280.0
+margin_right = 2560.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop3" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2560.0
+margin_right = 3840.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop4" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3840.0
+margin_right = 5120.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop5" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 5120.0
+margin_right = 6400.0
+margin_bottom = 800.0
+
+[node name="LevelBackdrop6" parent="CanvasLayer/ScrollContainer/HBoxContainer" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 6400.0
+margin_right = 7680.0
+margin_bottom = 800.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="MainMenuTouchButton" parent="CanvasLayer2" instance=ExtResource( 6 )]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/UI/Icons_31.png" type="Texture" id=1]
+[ext_resource path="res://src/UserInterface/SoundButton.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/Icons_29.png" type="Texture" id=3]
+
+[node name="SoundButton" type="TouchScreenButton"]
+scale = Vector2( 3, 3 )
+normal = ExtResource( 1 )
+script = ExtResource( 2 )
+sound_on_texture = ExtResource( 1 )
+sound_off_texture = ExtResource( 3 )
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

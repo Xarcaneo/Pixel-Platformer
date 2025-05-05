@@ -1,0 +1,192 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/Tilemap/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/TouchScreenButtons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/UserInterface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=5]
+[ext_resource path="res://src/Utilities/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Objects/Extra.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/backgrounds/background01.png" type="Texture" id=8]
+[ext_resource path="res://src/Objects/Totem_orb.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Objects/Door.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Objects/Totem.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Objects/Fireball.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/Obstacles/Dispeanser.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Objects/Mirror_dispeanser.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Objects/Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Levels/6/Level54.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/music/Stage 06.ogg" type="AudioStream" id=19]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 5 )
+music_clip = ExtResource( 19 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="UserInterface" parent="UserInterface" instance=ExtResource( 4 )]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 0, 11, 0, 1, 10, 0, 2, 11, 0, 3, 10, 0, 5, 11, 0, 6, 10, 0, 7, 10, 0, 8, 11, 0, 10, 11, 0, 11, 10, 0, 12, 11, 0, 13, 10, 0, 15, 11, 0, 16, 10, 0, 17, 10, 0, 19, 10, 0, 21, 11, 0, 23, 11, 0, 24, 11, 0, 25, 10, 0, 26, 11, 0, 28, 11, 0, 29, 10, 0, 30, 10, 0, 32, 11, 0, 34, 10, 0, 36, 10, 0, 38, 10, 0, 39, 10, 0, 65537, 11, 0, 65539, 11, 0, 65540, 11, 0, 65541, 11, 0, 65543, 11, 0, 65544, 10, 0, 65545, 11, 0, 65547, 11, 0, 65549, 10, 0, 65550, 10, 0, 65552, 10, 0, 65554, 11, 0, 65555, 11, 0, 65556, 10, 0, 65558, 11, 0, 65559, 10, 0, 65560, 11, 0, 65562, 10, 0, 65563, 11, 0, 65564, 10, 0, 65566, 10, 0, 65567, 11, 0, 65568, 11, 0, 65569, 11, 0, 65571, 11, 0, 65573, 11, 0, 65575, 10, 0, 131072, 11, 0, 131073, 10, 0, 131074, 10, 0, 131075, 11, 0, 131108, 11, 0, 131109, 10, 0, 131110, 11, 0, 196608, 11, 0, 196610, 11, 0, 196645, 10, 0, 196646, 11, 0, 196647, 10, 0, 262144, 11, 0, 262145, 10, 0, 262183, 10, 0, 327681, 11, 0, 327718, 11, 0, 393216, 11, 0, 393217, 10, 0, 393254, 11, 0, 393255, 10, 0, 458752, 10, 0, 458791, 11, 0, 524289, 10, 0, 524326, 10, 0, 589824, 11, 0, 589826, 11, 0, 589827, 10, 0, 589828, 11, 0, 589829, 10, 0, 589830, 11, 0, 589831, 10, 0, 589834, 10, 0, 589835, 11, 0, 589836, 10, 0, 589837, 11, 0, 589838, 11, 0, 589839, 11, 0, 589840, 11, 0, 589841, 11, 0, 589842, 10, 0, 589843, 11, 0, 589844, 10, 0, 589845, 11, 0, 589846, 11, 0, 589847, 11, 0, 589848, 10, 0, 589849, 11, 0, 589850, 10, 0, 589851, 11, 0, 589852, 10, 0, 589853, 10, 0, 589854, 11, 0, 589855, 11, 0, 589856, 10, 0, 589857, 11, 0, 589858, 11, 0, 589859, 10, 0, 589860, 11, 0, 589861, 11, 0, 589863, 11, 0, 655361, 11, 0, 655364, 10, 0, 655366, 11, 0, 655372, 10, 0, 655374, 10, 0, 655376, 11, 0, 655379, 11, 0, 655381, 11, 0, 655382, 10, 0, 655384, 11, 0, 655385, 11, 0, 655387, 10, 0, 655389, 10, 0, 655391, 11, 0, 655392, 10, 0, 655394, 10, 0, 655395, 11, 0, 655397, 11, 0, 655398, 10, 0, 720896, 11, 0, 720897, 11, 0, 720899, 10, 0, 720901, 11, 0, 720903, 11, 0, 720907, 10, 0, 720913, 10, 0, 720915, 10, 0, 720921, 10, 0, 720922, 10, 0, 720926, 11, 0, 720931, 11, 0, 720933, 11, 0, 720935, 10, 0, 786432, 11, 0, 786434, 11, 0, 786435, 11, 0, 786436, 11, 0, 786437, 11, 0, 786439, 10, 0, 786470, 10, 0, 786471, 11, 0, 851969, 11, 0, 851972, 11, 0, 851973, 10, 0, 851974, 11, 0, 851975, 10, 0, 852007, 10, 0, 917504, 11, 0, 917505, 11, 0, 917508, 10, 0, 917510, 11, 0, 917542, 11, 0, 983040, 10, 0, 983045, 10, 0, 983078, 11, 0, 983079, 11, 0, 1048576, 11, 0, 1048577, 11, 0, 1048581, 11, 0, 1048614, 11, 0, 1114112, 11, 0, 1114117, 11, 0, 1114151, 11, 0, 1179649, 11, 0, 1179686, 10, 0, 1179687, 11, 0, 1245184, 10, 0, 1245185, 10, 0, 1245222, 10, 0, 1245223, 11, 0, 1310720, 11, 0, 1310721, 10, 0, 1310758, 11, 0, 1376256, 11, 0, 1376258, 10, 0, 1376293, 11, 0, 1376295, 10, 0, 1441792, 10, 0, 1441793, 11, 0, 1441795, 11, 0, 1441828, 10, 0, 1441829, 10, 0, 1441830, 10, 0, 1441831, 11, 0, 1507329, 10, 0, 1507331, 11, 0, 1507332, 11, 0, 1507333, 10, 0, 1507335, 10, 0, 1507336, 11, 0, 1507337, 11, 0, 1507338, 10, 0, 1507339, 11, 0, 1507340, 11, 0, 1507341, 11, 0, 1507342, 10, 0, 1507343, 11, 0, 1507344, 10, 0, 1507345, 10, 0, 1507346, 10, 0, 1507347, 10, 0, 1507348, 11, 0, 1507349, 11, 0, 1507350, 10, 0, 1507351, 10, 0, 1507352, 10, 0, 1507353, 10, 0, 1507354, 11, 0, 1507355, 11, 0, 1507356, 11, 0, 1507357, 10, 0, 1507358, 11, 0, 1507359, 10, 0, 1507360, 11, 0, 1507361, 10, 0, 1507362, 10, 0, 1507363, 10, 0, 1507365, 11, 0, 1507367, 11, 0, 1572864, 10, 0, 1572865, 11, 0, 1572866, 10, 0, 1572867, 10, 0, 1572869, 11, 0, 1572870, 10, 0, 1572871, 10, 0, 1572873, 10, 0, 1572875, 10, 0, 1572876, 11, 0, 1572878, 11, 0, 1572879, 10, 0, 1572880, 10, 0, 1572882, 10, 0, 1572883, 11, 0, 1572884, 10, 0, 1572885, 10, 0, 1572887, 11, 0, 1572888, 10, 0, 1572889, 11, 0, 1572890, 11, 0, 1572891, 10, 0, 1572893, 10, 0, 1572894, 11, 0, 1572895, 10, 0, 1572896, 11, 0, 1572898, 11, 0, 1572899, 11, 0, 1572900, 11, 0, 1572901, 10, 0, 1572903, 11, 0 )
+
+[node name="TouchScreenButtons" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 544, 256 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 448, 256 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 352, 256 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 128, 224 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1184, 608 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 1152, 640 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 192, 640 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 192, 608 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 17 )]
+position = Vector2( 192, 576 )
+
+[node name="Extra" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1088, 256 )
+
+[node name="Totem orbs" type="Node2D" parent="."]
+
+[node name="Totem_orb" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 640, 256 )
+
+[node name="Totem_orb2" parent="Totem orbs" instance=ExtResource( 9 )]
+position = Vector2( 192, 672 )
+
+[node name="Totems" type="Node2D" parent="."]
+
+[node name="Totem" parent="Totems" instance=ExtResource( 11 )]
+position = Vector2( 128, 256 )
+link_code = 1
+
+[node name="Totem2" parent="Totems" instance=ExtResource( 11 )]
+position = Vector2( 1184, 640 )
+link_code = 3
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource( 15 )]
+position = Vector2( 1152, 672 )
+link_code = 2
+
+[node name="Door" type="Node2D" parent="."]
+
+[node name="Door" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 256, 288 )
+link_code = 1
+
+[node name="Door2" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 288, 288 )
+link_code = 1
+
+[node name="Door3" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 1152, 672 )
+link_code = 2
+is_open = "OPEN"
+
+[node name="Door4" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 160, 576 )
+link_code = 3
+
+[node name="Door5" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 160, 608 )
+link_code = 3
+
+[node name="Door6" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 160, 640 )
+link_code = 3
+
+[node name="Door7" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 160, 672 )
+link_code = 3
+
+[node name="Door8" parent="Door" instance=ExtResource( 10 )]
+position = Vector2( 160, 704 )
+link_code = 3
+
+[node name="Dispeansers" type="Node2D" parent="."]
+
+[node name="Dispeanser3" parent="Dispeansers" instance=ExtResource( 13 )]
+position = Vector2( 192, 736 )
+wait_time = 0.5
+
+[node name="Mirror dispeanser" type="Node2D" parent="."]
+
+[node name="Mirror_dispeanser" parent="Mirror dispeanser" instance=ExtResource( 14 )]
+position = Vector2( 192, 704 )
+link_code = 2
+
+[node name="Mirror_dispeanser2" parent="Mirror dispeanser" instance=ExtResource( 14 )]
+position = Vector2( 320, 256 )
+link_code = 2
+fireball_direction = "RIGHT"
+
+[node name="Mirror_dispeanser3" parent="Mirror dispeanser" instance=ExtResource( 14 )]
+position = Vector2( 736, 256 )
+link_code = 2
+fireball_direction = "LEFT"
+
+[node name="Mirror_dispeanser4" parent="Mirror dispeanser" instance=ExtResource( 14 )]
+position = Vector2( 768, 256 )
+link_code = 2
+fireball_direction = "RIGHT"
+
+[node name="Mirror_dispeanser5" parent="Mirror dispeanser" instance=ExtResource( 14 )]
+position = Vector2( 1184, 256 )
+link_code = 2
+fireball_direction = "LEFT"
+
+[node name="Portal" parent="." instance=ExtResource( 16 )]
+position = Vector2( 64, 608 )
+current_level = 53
+next_scene = ExtResource( 18 )
+
+[node name="Fireball" type="Node2D" parent="."]
+
+[node name="Fireball" parent="Fireball" instance=ExtResource( 12 )]
+position = Vector2( 704, 272 )
+speed = 700
+direction = "RIGHT"
+
+[node name="Fireball2" parent="Fireball" instance=ExtResource( 12 )]
+position = Vector2( 1152, 272.5 )
+speed = 700
+direction = "RIGHT"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 256 )
+collision_mask = 2

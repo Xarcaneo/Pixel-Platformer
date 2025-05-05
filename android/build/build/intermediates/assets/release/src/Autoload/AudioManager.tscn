@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Autoload/AudioManager.gd" type="Script" id=1]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Music" type="Node" parent="."]
+
+[node name="Music_player" type="AudioStreamPlayer" parent="Music"]
+volume_db = -20.0
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="Sfx_player_1" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_2" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_3" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_4" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_5" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_6" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_7" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_8" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_9" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_10" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_11" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_12" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_13" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_14" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_15" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_16" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_17" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_18" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_19" type="AudioStreamPlayer" parent="Sfx"]
+
+[node name="Sfx_player_20" type="AudioStreamPlayer" parent="Sfx"]

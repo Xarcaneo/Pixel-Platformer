@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Screens/ShopScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/music/Main Menu.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/objects/extra_full.png" type="Texture" id=3]
+[ext_resource path="res://assets/backgrounds/background3.png" type="Texture" id=4]
+[ext_resource path="res://src/UserInterface/MainMenuTouchButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/themes/ui_theme.tres" type="Theme" id=6]
+[ext_resource path="res://assets/fonts/8bit_dynamic_font_dialogue.tres" type="DynamicFont" id=7]
+[ext_resource path="res://src/UserInterface/SkinSelector.tscn" type="PackedScene" id=8]
+
+[node name="ShopScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -896, -160 )
+theme = ExtResource( 6 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+music_clip = ExtResource( 2 )
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="background3" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuTouchButton" parent="." instance=ExtResource( 5 )]
+
+[node name="CurrentSkinPanel" type="ColorRect" parent="."]
+margin_left = 192.0
+margin_top = 32.0
+margin_right = 544.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CurrentSkinPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CurrentSkinPanel"]
+margin_left = 32.0
+margin_top = 15.1532
+margin_right = 280.0
+margin_bottom = 48.1532
+custom_fonts/font = ExtResource( 7 )
+text = "Current skin:"
+align = 1
+
+[node name="sprite" type="TextureRect" parent="CurrentSkinPanel"]
+margin_left = 288.0
+margin_right = 352.0
+margin_bottom = 64.0
+stretch_mode = 4
+
+[node name="ExtraPanel" type="ColorRect" parent="."]
+margin_left = 64.0
+margin_top = 32.0
+margin_right = 160.0
+margin_bottom = 96.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExtraPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="ExtraPanel"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ExtraPanel"]
+margin_left = 32.0
+margin_right = 96.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkinContainers" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -576.0
+margin_top = -272.0
+margin_right = 544.0
+margin_bottom = 368.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 128
+custom_constants/hseparation = 128
+columns = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkinSelector" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="SkinSelector2" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 128.0
+margin_right = 128.0
+margin_bottom = 0.0
+price = 5
+skin_index = 1
+
+[node name="SkinSelector3" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 256.0
+margin_right = 256.0
+margin_bottom = 0.0
+price = 10
+skin_index = 2
+
+[node name="SkinSelector4" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 384.0
+margin_right = 384.0
+margin_bottom = 0.0
+price = 15
+skin_index = 3
+
+[node name="SkinSelector5" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 512.0
+margin_right = 512.0
+margin_bottom = 0.0
+price = 20
+skin_index = 4
+
+[node name="SkinSelector6" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 640.0
+margin_right = 640.0
+margin_bottom = 0.0
+price = 25
+skin_index = 5
+
+[node name="SkinSelector7" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 768.0
+margin_right = 768.0
+margin_bottom = 0.0
+price = 30
+skin_index = 6
+
+[node name="SkinSelector8" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 896.0
+margin_right = 896.0
+margin_bottom = 0.0
+price = 35
+skin_index = 7
+
+[node name="SkinSelector9" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 1024.0
+margin_right = 1024.0
+margin_bottom = 0.0
+price = 40
+skin_index = 8
+
+[node name="SkinSelector10" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_top = 128.0
+margin_right = 0.0
+margin_bottom = 128.0
+price = 45
+skin_index = 9
+
+[node name="SkinSelector11" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 128.0
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 128.0
+price = 50
+skin_index = 10
+
+[node name="SkinSelector12" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 256.0
+margin_top = 128.0
+margin_right = 256.0
+margin_bottom = 128.0
+price = 55
+skin_index = 11
+
+[node name="SkinSelector13" parent="SkinContainers" instance=ExtResource( 8 )]
+margin_left = 384.0
+margin_top = 128.0
+margin_right = 384.0
+margin_bottom = 128.0
+price = 60
+skin_index = 12
+
+[connection signal="tree_exited" from="." to="." method="_on_ShopScreen_tree_exited"]

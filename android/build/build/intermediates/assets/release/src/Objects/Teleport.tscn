@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/objects/PyramidTeleport.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/orb.png" type="Texture" id=2]
+[ext_resource path="res://assets/objects/CaveTeleport.png" type="Texture" id=3]
+[ext_resource path="res://src/Objects/Teleport.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/Teleport.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/objects/JungleTeleport.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Jungle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Cave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Pyramid",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[node name="Teleport" type="Area2D" groups=[
+"teleport",
+]]
+collision_layer = 128
+script = ExtResource( 4 )
+sound_clip = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 16, 16 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 16, 16 )
+frames = SubResource( 1 )
+animation = "Jungle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 16, 16 )
+shape = SubResource( 2 )

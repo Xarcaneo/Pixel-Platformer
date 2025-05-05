@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/UI/touchbutton.png" type="Texture" id=1]
+
+[node name="TouchScreenButtons" type="CanvasLayer"]
+__meta__ = {
+"_edit_vertical_guides_": [ -672.0 ]
+}
+
+[node name="ButtonLeft" type="TouchScreenButton" parent="."]
+scale = Vector2( 1, 2.00706 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 1 )
+action = "ui_left"
+
+[node name="ButtonRight" type="TouchScreenButton" parent="."]
+position = Vector2( 640, 0 )
+scale = Vector2( 1.00653, 2.00706 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 1 )
+action = "ui_right"

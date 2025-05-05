@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UserInterface/LevelSelectButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/backdrop backgrounds/backdrop_background_1.png" type="Texture" id=2]
+
+[node name="LevelBackdrop1" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -448, -256 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelectButton" parent="." instance=ExtResource( 1 )]
+margin_left = 96.0
+margin_top = 320.0
+margin_right = 160.0
+margin_bottom = 384.0
+level = 1
+next_level_patch = "res://src/Levels/1/Level01.tscn"
+
+[node name="LevelSelectButton2" parent="." instance=ExtResource( 1 )]
+margin_left = 352.0
+margin_top = 320.0
+margin_right = 416.0
+margin_bottom = 384.0
+level = 2
+next_level_patch = "res://src/Levels/1/Level02.tscn"
+
+[node name="LevelSelectButton3" parent="." instance=ExtResource( 1 )]
+margin_left = 480.0
+margin_top = 160.0
+margin_right = 544.0
+margin_bottom = 224.0
+level = 3
+next_level_patch = "res://src/Levels/1/Level03.tscn"
+
+[node name="LevelSelectButton4" parent="." instance=ExtResource( 1 )]
+margin_left = 672.0
+margin_top = 96.0
+margin_right = 736.0
+margin_bottom = 160.0
+level = 4
+next_level_patch = "res://src/Levels/1/Level04.tscn"
+
+[node name="LevelSelectButton5" parent="." instance=ExtResource( 1 )]
+margin_left = 832.0
+margin_top = 256.0
+margin_right = 896.0
+margin_bottom = 320.0
+level = 5
+next_level_patch = "res://src/Levels/1/Level05.tscn"
+
+[node name="LevelSelectButton6" parent="." instance=ExtResource( 1 )]
+margin_left = 704.0
+margin_top = 448.0
+margin_right = 768.0
+margin_bottom = 512.0
+level = 6
+next_level_patch = "res://src/Levels/1/Level06.tscn"
+
+[node name="LevelSelectButton7" parent="." instance=ExtResource( 1 )]
+margin_left = 800.0
+margin_top = 672.0
+margin_right = 864.0
+margin_bottom = 736.0
+level = 7
+next_level_patch = "res://src/Levels/1/Level07.tscn"
+
+[node name="LevelSelectButton8" parent="." instance=ExtResource( 1 )]
+margin_left = 1088.0
+margin_top = 672.0
+margin_right = 1152.0
+margin_bottom = 736.0
+level = 8
+next_level_patch = "res://src/Levels/1/Level08.tscn"
+
+[node name="LevelSelectButton9" parent="." instance=ExtResource( 1 )]
+margin_left = 1090.0
+margin_top = 384.0
+margin_right = 1154.0
+margin_bottom = 448.0
+level = 9
+next_level_patch = "res://src/Levels/1/Level09.tscn"
+
+[node name="LevelSelectButton10" parent="." instance=ExtResource( 1 )]
+margin_left = 1155.0
+margin_top = 160.0
+margin_right = 1219.0
+margin_bottom = 224.0
+level = 10
+next_level_patch = "res://src/Levels/1/Level10.tscn"
